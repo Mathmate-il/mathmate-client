@@ -23,7 +23,7 @@ function Navbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Mathmate
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" variant="outlined">Sign In</Button>
         </Toolbar>
       </AppBar>
     </Box>

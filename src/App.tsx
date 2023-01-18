@@ -1,18 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/navbar";
-import useStore from "./store/store";
+import Home from "./pages/HomePage";
+import NotFound from "./pages/NotFoundPage";
+import SearchResult from "./pages/SearchResultPage";
 
 function App() {
-  const newQuestion = useStore((state) => state.newQuestion);
-  const isLoggedIn = useStore((state) => state.isLoggedIn);
-
-  console.log(isLoggedIn);
   return (
-    <div>
-      <Navbar />
-      <h1>{newQuestion}</h1>
-      <h2>{isLoggedIn.toString()}</h2>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/searchResult" element={<SearchResult />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
