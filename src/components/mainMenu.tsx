@@ -5,7 +5,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { useNavigate } from 'react-router-dom';
 
 interface MainMenuProps {
-  anchorEl: any;
+  anchorEl: Element;
   handleClose: () => void;
   open: boolean;
 }

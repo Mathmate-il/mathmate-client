@@ -23,5 +23,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'linebreak-style': 'off',
     'no-console': 'off',
+    'import/prefer-default-export': 'off',
+    '@typescript-eslint/comma-dangle':'off'
   },
 };

@@ -26,7 +26,9 @@ function NewQuestion() {
     navigate('/searchResult');
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
     setQuestion((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,

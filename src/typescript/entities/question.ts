@@ -18,4 +18,4 @@ export const initialQuestionObject: z.infer<typeof Question> = {
   rate: 0,
   ownerId: '',
   tags: [],
-}
+};

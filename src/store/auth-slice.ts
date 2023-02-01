@@ -7,7 +7,7 @@ export interface AuthSlice {
   currentUser: z.infer<typeof User>;
 }
 
-export const createAuthSlice: StateCreator<AuthSlice> = (set) => ({
+export const createAuthSlice: StateCreator<AuthSlice> = () => ({
   isLoggedIn: true,
   currentUser: {
     ...initialUserObject,
