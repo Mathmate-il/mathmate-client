@@ -1,13 +1,13 @@
 import { Component, ErrorInfo } from 'react';
 
-interface Props {}
+interface ErrorBoundaryProps {}
 
 interface State {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
+class ErrorBoundary extends Component<ErrorBoundaryProps, State> {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }
