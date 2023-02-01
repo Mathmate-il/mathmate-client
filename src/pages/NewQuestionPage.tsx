@@ -2,6 +2,7 @@ import { TextField, Button } from '@mui/material';
 import { MuiChipsInput } from 'mui-chips-input';
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { z } from 'zod';
 import useStore, { StoreState } from '../store/store';
 import { initialQuestionObject, Question } from '../typescript';
 
@@ -10,7 +11,7 @@ function NewQuestion() {
 
   const addQuestion = useStore((state: StoreState) => state.addQuestion);
 
-  const [question, setQuestion] = useState<Question>({
+  const [question, setQuestion] = useState<z.infer<typeof Question>>({
     ...initialQuestionObject,
     id: crypto.randomUUID(),
   });

@@ -1,16 +1,17 @@
-import { StateCreator } from "zustand";
-import { Question, initialQuestionObject } from "../typescript";
+import { StateCreator } from 'zustand';
+import { z } from 'zod';
+import { Question, initialQuestionObject } from '../typescript';
 
 export interface QuestionsSlice {
-  questions: Question[];
-  selectedQuestion?: Question;
-  addQuestion: (question: Question) => void;
+  questions: z.infer<typeof Question>[];
+  selectedQuestion?: z.infer<typeof Question>;
+  addQuestion: (question: z.infer<typeof Question>) => void;
 }
 
 export const createQuestionsSlice: StateCreator<QuestionsSlice> = (set) => ({
   questions: [initialQuestionObject],
   selectedQuestion: undefined,
-  addQuestion(question: Question) {
+  addQuestion(question: z.infer<typeof Question>) {
     set((state: QuestionsSlice) => ({
       ...state,
       selectedQuestion: question,

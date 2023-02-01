@@ -1,14 +1,16 @@
-export interface Answer {
-  id: string;
-  createdAt: Date;
-  isChosen: boolean;
-  rate: number;
-  answer: string;
-  ownerId: string;
-  questionId: string;
-}
+import { z } from 'zod';
 
-export const initialAnswerObject: Answer = {
+export const Answer = z.object({
+  id: z.string(),
+  createdAt: z.date(),
+  isChosen: z.boolean(),
+  rate: z.number(),
+  answer: z.string(),
+  ownerId: z.string(),
+  questionId: z.string(),
+});
+
+export const initialAnswerObject: z.infer<typeof Answer> = {
   id: '',
   createdAt: new Date(),
   isChosen: false,

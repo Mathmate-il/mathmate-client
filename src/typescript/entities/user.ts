@@ -1,12 +1,14 @@
-export interface User {
-  id: string;
-  createdAt: Date;
-  email: string;
-  name: string;
-  image: string;
-}
+import { z } from 'zod';
 
-export const initialUserObject: User = {
+export const User = z.object({
+  id: z.string(),
+  createdAt: z.date(),
+  email: z.string(),
+  name: z.string(),
+  image: z.string(),
+});
+
+export const initialUserObject: z.infer<typeof User> = {
   id: '',
   createdAt: new Date(),
   email: '',
