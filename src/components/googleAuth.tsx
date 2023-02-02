@@ -1,5 +1,3 @@
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
-
 let jwtToken: string;
 
 async function getMe() {
@@ -14,7 +12,7 @@ function GoogleAuth() {
     <>
       <GoogleOAuthProvider clientId={import.meta.env.GOOGLE_CLIENT_ID}>
         <GoogleLogin
-          onSuccess={async (credentialResponse) => {
+          onSuccess={async (credentialResponse: any) => {
             console.log(credentialResponse);
             const res = await fetch('http://localhost:3001/auth/login', {
               method: 'POST',
