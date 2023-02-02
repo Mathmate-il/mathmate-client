@@ -10,6 +10,7 @@ const QuestionSchema = z.object({
     question: z.string(),
     owner: User,
     tags: z.array(Tag),
+    rating: z.number(),
 });
 
 export const Question = createType(QuestionSchema);
