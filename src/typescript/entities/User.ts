@@ -1,4 +1,4 @@
-import { createType } from "./../helpers/createType";
+import { createTypeFromZodSchema } from "./../helpers/createType";
 import { z } from "zod";
 
 const UserSchema = z.object({
@@ -9,4 +9,4 @@ const UserSchema = z.object({
     image: z.string(),
 });
 
-export const User = createType(UserSchema);
+export const User = createTypeFromZodSchema(UserSchema);

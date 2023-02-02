@@ -1,4 +1,4 @@
-import { createType } from "./../helpers/createType";
+import { createTypeFromZodSchema } from "./../helpers/createType";
 import { Question } from "./Question";
 import { z } from "zod";
 import { User } from "./User";
@@ -13,4 +13,4 @@ const AnswerSchema = z.object({
     rate: z.number(),
 });
 
-export const Answer = createType(AnswerSchema);
+export const Answer = createTypeFromZodSchema(AnswerSchema);

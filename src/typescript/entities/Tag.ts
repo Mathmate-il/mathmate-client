@@ -1,4 +1,4 @@
-import { createType } from "./../helpers/createType";
+import { createTypeFromZodSchema } from "./../helpers/createType";
 import { z } from "zod";
 
 const TagSchema = z.object({
@@ -6,4 +6,4 @@ const TagSchema = z.object({
     tagName: z.string(),
 });
 
-export const Tag = createType(TagSchema);
+export const Tag = createTypeFromZodSchema(TagSchema);
