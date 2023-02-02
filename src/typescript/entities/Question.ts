@@ -7,7 +7,7 @@ const QuestionSchema = z.object({
     createdAt: z.string().datetime(),
     title: z.string(),
     question: z.string(),
-    owner: User || undefined,
+    owner: User,
 });
 
 export const Question = createType(QuestionSchema);
