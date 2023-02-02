@@ -1,15 +1,18 @@
 import { Card, Container, Stack } from '@mui/material';
 import { MuiChipsInput } from 'mui-chips-input';
+import { z } from 'zod';
 import { Question } from '../typescript';
 import SearchInput from '../components/searchInput';
 import useStore, { StoreState } from '../store/store';
 
 function SearchResult() {
   const selectedQuestion = useStore(
-    (state: StoreState) => state.selectedQuestion,
+    (state: StoreState) => state.selectedQuestion
   );
 
-  const questions: Question[] = useStore((state: StoreState) => state.questions);
+  const questions: z.infer<typeof Question>[] = useStore(
+    (state: StoreState) => state.questions
+  );
 
   const handleChipsChange = () => {};
 

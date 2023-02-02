@@ -2,7 +2,7 @@ import { Paper, InputBase, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 interface SearchInputProps {
-  text: string;
+  text: string | undefined;
 }
 
 function SearchInput({ text }: SearchInputProps) {
@@ -10,7 +10,10 @@ function SearchInput({ text }: SearchInputProps) {
     <Paper
       component="form"
       sx={{
-        p: '2px 4px', display: 'flex', alignItems: 'center', width: 400,
+        p: '2px 4px',
+        display: 'flex',
+        alignItems: 'center',
+        width: 400,
       }}
     >
       <InputBase sx={{ ml: 1, flex: 1 }} placeholder="" value={text} />
