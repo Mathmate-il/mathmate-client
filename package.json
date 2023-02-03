@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@commitlint/config-conventional": "^17.4.2",
+    "@react-oauth/google": "^0.6.1",
     "commitlint": "^17.4.2",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
