@@ -1,0 +1,38 @@
+// COLORS
+$color-primary: #006AD9;
+$color-primary-light: #0074ED;
+$color-primary-dark: #0053AB;
+
+$color-secondary: #011A43;
+$color-secondary-light: #023180;
+$color-secondary-dark: #01122E;
+
+$color-tertiary: #01469A;
+$color-tertiary-light: #0157BF;
+$color-tertiary-dark: #012B5E;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #EEF6FF;
+$color-black: #000A1A;
+
+$color-background-1: #0071E7;
+$color-background-2: #011A43;
+$color-background-liniar: linear-gradient(180deg, $color-background-1 0%, $color-background-2 100%);
+
+
+// FONT
+$default-font-size: 1.6rem;
+
+// GRID
+
+$grid-width: 114rem;
+$grid-width-small: 52rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;

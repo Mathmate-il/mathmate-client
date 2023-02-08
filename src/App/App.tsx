@@ -3,16 +3,16 @@ import GoogleAuth from "../components/GoogleAuth";
 import env from "../config/env";
 import "./App.style.scss";
 
-// test comit
-
 function App() {
-    return (
-        <GoogleOAuthProvider clientId={env.GOOGLE_CLIENT_ID}>
-            <div className='App'>
-                <GoogleAuth />
-            </div>
-        </GoogleOAuthProvider>
-    );
+  return (
+    <div className="container">
+      <GoogleOAuthProvider clientId={env.GOOGLE_CLIENT_ID}>
+        <div>
+          <GoogleAuth />
+        </div>
+      </GoogleOAuthProvider>
+    </div>
+  );
 }
 
 export default App;
