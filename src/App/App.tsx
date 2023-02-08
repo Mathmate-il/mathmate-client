@@ -3,6 +3,8 @@ import GoogleAuth from "../components/GoogleAuth";
 import env from "../config/env";
 import "./App.style.scss";
 
+// test comit
+
 function App() {
     return (
         <GoogleOAuthProvider clientId={env.GOOGLE_CLIENT_ID}>
