@@ -1,4 +1,4 @@
-import "./NewQuestions.style.scss";
+import "./NewQuestion.style.scss";
 
 export default function NewQuestion() {
     return <></>;
