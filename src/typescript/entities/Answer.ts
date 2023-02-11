@@ -1,17 +1,16 @@
 import { z } from 'zod';
-import { createTypeFromZodSchema } from '../helpers/createType';
-import { Question } from './Question';
-import User from './User';
+import { QuestionSchema } from './Question';
+import { UserSchema } from './User';
 
-const AnswerSchema = z.object({
+export const AnswerSchema = z.object({
   id: z.string().uuid(),
   createdAt: z.string().datetime(),
   isChosen: z.boolean(),
   answer: z.string(),
-  owner: User,
-  relatedQuestion: Question,
+  owner: UserSchema,
+  relatedQuestion: QuestionSchema,
   rate: z.number(),
 });
 
-const Answer = createTypeFromZodSchema(AnswerSchema);
+type Answer = z.infer<typeof AnswerSchema>;
 export default Answer;

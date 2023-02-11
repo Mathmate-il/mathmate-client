@@ -1,11 +1,10 @@
 import { z } from 'zod';
-import { createTypeFromZodSchema } from '../helpers/createType';
-import { Question } from './Question';
+import { QuestionSchema } from './Question';
 
-const NewAnswerSchema = z.object({
+export const NewAnswerSchema = z.object({
   answer: z.string(),
-  relatedQuestion: Question,
+  relatedQuestion: QuestionSchema,
 });
 
-const NewAnswer = createTypeFromZodSchema(NewAnswerSchema);
+type NewAnswer = z.infer<typeof NewAnswerSchema>;
 export default NewAnswer;

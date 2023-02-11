@@ -1,12 +1,11 @@
 import { z } from 'zod';
-import { createTypeFromZodSchema } from '../helpers/createType';
-import Tag from './Tag';
+import { TagSchema } from './Tag';
 
-const NewQuestionSchema = z.object({
+export const NewQuestionSchema = z.object({
   title: z.string(),
   question: z.string(),
-  tags: z.array(Tag),
+  tags: z.array(TagSchema),
 });
 
-const NewQuestion = createTypeFromZodSchema(NewQuestionSchema);
+type NewQuestion = z.infer<typeof NewQuestionSchema>;
 export default NewQuestion;
