@@ -1,9 +1,9 @@
-import { StateCreator } from "zustand";
-import { Question } from "../typescript";
+import { StateCreator } from 'zustand';
+import { Question } from '../typescript';
 
 export interface QuestionsSlice {
-  questions: typeof Question[];
-  selectedQuestion?:typeof Question;
+  questions: (typeof Question)[];
+  selectedQuestion?: typeof Question;
   addQuestion: (question: typeof Question) => void;
 }
 

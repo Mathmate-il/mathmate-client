@@ -1,12 +1,12 @@
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import env from "../config/env";
-import "./App.style.scss";
-import { Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
-import NewQuestion from "../pages/NewQuestion";
-import Profile from "../pages/Profile";
-import NotFound from "../pages/NotFound";
-import SearchResult from "../pages/SearchResult";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { Route, Routes } from 'react-router-dom';
+import env from '../config/env';
+import './App.style.scss';
+import Home from '../pages/Home';
+import NewQuestion from '../pages/NewQuestion';
+import Profile from '../pages/Profile';
+import NotFound from '../pages/NotFound';
+import SearchResult from '../pages/SearchResult';
 
 function App() {
   return (

@@ -13,6 +13,7 @@
     "@react-oauth/google": "^0.6.1",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "commitlint": "^17.4.2",
+    "lint": "^0.8.19",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

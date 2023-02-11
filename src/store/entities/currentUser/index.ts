@@ -1,1 +1,1 @@
-import { StateCreator } from "zustand";
+import { StateCreator } from 'zustand';
