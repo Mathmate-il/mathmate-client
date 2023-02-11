@@ -1,10 +1,8 @@
 import { TypeOf } from 'zod';
 import { StateCreator } from 'zustand';
-import { User } from '../typescript';
-
 export interface AuthSlice {
   isLoggedIn: boolean;
-  currentUser: TypeOf<typeof User>;
+  currentUser: TypeOf<User>;
 }
 
 export const createAuthSlice: StateCreator<AuthSlice> = (set) => ({

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { createTypeFromZodSchema } from '../helpers/createType';
-import { Tag } from './Tag';
+import Tag from './Tag';
 
 const NewQuestionSchema = z.object({
   title: z.string(),
@@ -8,4 +8,5 @@ const NewQuestionSchema = z.object({
   tags: z.array(Tag),
 });
 
-export const NewQuestion = createTypeFromZodSchema(NewQuestionSchema);
+const NewQuestion = createTypeFromZodSchema(NewQuestionSchema);
+export default NewQuestion;

@@ -6,4 +6,5 @@ const TagSchema = z.object({
   tagName: z.string(),
 });
 
-export const Tag = createTypeFromZodSchema(TagSchema);
+const Tag = createTypeFromZodSchema(TagSchema);
+export default Tag;

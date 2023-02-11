@@ -9,4 +9,5 @@ const UserSchema = z.object({
   image: z.string(),
 });
 
-export const User = createTypeFromZodSchema(UserSchema);
+const User = createTypeFromZodSchema(UserSchema);
+export default User;

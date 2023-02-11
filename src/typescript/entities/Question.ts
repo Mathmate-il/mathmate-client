@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { createTypeFromZodSchema } from '../helpers/createType';
-import { Tag } from './Tag';
-import { User } from './User';
+import Tag from './Tag';
+import User from './User';
 
 const QuestionSchema = z.object({
   id: z.string().uuid(),
@@ -14,3 +14,4 @@ const QuestionSchema = z.object({
 });
 
 export const Question = createTypeFromZodSchema(QuestionSchema);
+export default Question;

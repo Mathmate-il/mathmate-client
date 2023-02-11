@@ -7,4 +7,5 @@ const NewAnswerSchema = z.object({
   relatedQuestion: Question,
 });
 
-export const NewAnswer = createTypeFromZodSchema(NewAnswerSchema);
+const NewAnswer = createTypeFromZodSchema(NewAnswerSchema);
+export default NewAnswer;
