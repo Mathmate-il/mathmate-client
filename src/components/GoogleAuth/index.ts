@@ -1,1 +1,1 @@
-export { default } from "./GoogleAuth";
+export { default } from './GoogleAuth';
