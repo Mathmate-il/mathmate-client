@@ -23,17 +23,18 @@
     "react-router-dom": "^6.8.1",
     "storybook": "^6.5.16",
     "zod": "^3.20.2",
-    "zustand": "^4.3.2"
+    "zustand": "^4.3.2",
+    "@storybook/react": "^6.5.16"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@commitlint/cli": "^17.4.2",
+    "@mdx-js/react": "^1.6.22",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-vite": "^0.4.1",
-    "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
