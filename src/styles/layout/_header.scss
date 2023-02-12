@@ -1,17 +1,13 @@
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
-    url('../img/hero.jpg');
-  background-size: cover;
-  background-position: top;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-
+  background-image: 'transparent';
+  height: 77px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: '14px';
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);

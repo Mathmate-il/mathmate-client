@@ -1,22 +1,22 @@
+@import '../base/typogrophy';
 .btn {
   &,
   &:link,
   &:visited {
     position: relative;
     display: inline-block;
-    text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
-    border-radius: 10rem;
+    padding: 2.5rem 4rem;
+
+    width: 300px;
     transition: all 0.2s linear;
-    font-size: $default-font-size;
+    font-size: 20px;
+    background-color: $color-background-2;
+    color: $color-white;
+    border-radius: 0.4rem;
     // Changes for <button> element
     border: none;
     cursor: pointer;
-
-    @include respond(tab-land) {
-      max-width: 18rem;
-    }
   }
 
   &:hover {
@@ -38,6 +38,7 @@
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
+    text-align: left;
     &::after {
       background-color: $color-white;
     }

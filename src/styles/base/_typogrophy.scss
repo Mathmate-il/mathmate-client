@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;500&family=Hind:wght@300&display=swap');
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Hind', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
   color: $color-grey-dark;
 }
 
-.heading-primery {
+.heading-primary {
+  font-family: 'Expletus Sans', cursive;
   color: $color-white;
-  text-transform: uppercase;
+  text-transform: capitalize;
   backface-visibility: hidden;
-  margin-bottom: 6rem;
+  font-size: 28px;
+  // margin-bottom: 6rem;
 
   &--main {
     display: block;
@@ -38,6 +41,7 @@ body {
 }
 
 .heading-secondary {
+  font-family: 'Expletus Sans', cursive;
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
