@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
 import GoogleAuth from '../../components/GoogleAuth';
 import './Home.style.scss';
+import linkedin from '../../assets/linkedin.svg';
+import github from '../../assets/github.svg';
 import useStore, { StoreState } from '../../store/store';
 
 export default function Home() {
@@ -10,39 +11,17 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        justifyContent: 'space-between',
-        flexDirection: 'column',
-        display: 'flex',
-        minHeight: '100vh',
-        maxHeight: '100vh',
-      }}
-    >
+    <div className="home">
       <header className="header">
         <h1 className="heading-primary">MathMate</h1>
         <GoogleAuth />
       </header>
-      <div
-        style={{
-          height: '60vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
+      <div className="contentBody">
         <article>
           <h1 className="heading-primary" style={{ fontSize: '48px' }}>
             OUR MESSAGE
           </h1>
-          <p
-            style={{
-              color: 'white',
-              fontSize: '20px',
-              textAlign: 'justify',
-            }}
-          >
+          <p className="par">
             A Description about our mission
             <br />
             in two lines something that sums
@@ -50,14 +29,7 @@ export default function Home() {
             up the experience.
           </p>
         </article>
-        <div
-          style={{
-            height: '30%',
-            display: ' flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-          }}
-        >
+        <div className="links">
           <button
             className="btn btn--white "
             type="button"
@@ -81,8 +53,8 @@ export default function Home() {
       <footer className="footer">
         <h2 className="heading-primary">MathMate</h2>
         <ul>
-          <IoLogoLinkedin size={50} />
-          <IoLogoGithub size={50} />
+          <img src={linkedin} className="icon" />
+          <img src={github} className="icon" />
         </ul>
       </footer>
     </div>

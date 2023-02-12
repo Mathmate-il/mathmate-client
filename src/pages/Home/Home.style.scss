@@ -1,0 +1,30 @@
+@import '../../styles/abstracts/variables';
+.home {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+.contentBody {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.par {
+  color: $color-white;
+  font-size: 20px;
+  text-align: justify;
+}
+.links {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.icon {
+  width: 40px;
+  margin: 0px 10px;
+}
