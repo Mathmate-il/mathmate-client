@@ -94,3 +94,27 @@
     transform: translateY(0);
   }
 }
+
+.btn-tab {
+  &,
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-white;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    background-color: $color-primary;
+    border: 0;
+  }
+  
+  &:hover {
+    background-color: $color-primary;
+    color: $color-black;
+  }
+  
+  &:active {
+    border-bottom: 1px solid $color-white;
+  }
+}
