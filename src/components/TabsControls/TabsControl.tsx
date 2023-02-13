@@ -24,17 +24,19 @@ function TabsControl({ children }: TabsControlProps) {
 
   return (
     <div>
-      {tabs.map((tab, index) => (
-        <button
-          type="button"
-          key={index} // todo: think how to fix that
-          className={`tab ${activeTab === index ? 'active' : ''}`}
-          onClick={() => handleTabClick(index)}
-          onKeyUp={() => handleTabClick(index)}
-        >
-          {tab.props.label}
-        </button>
-      ))}
+      <div className="tabsContainer">
+        {tabs.map((tab, index) => (
+          <button
+            type="button"
+            key={index} // todo: think how to fix that
+            className={`paragraph2 tab ${activeTab === index ? 'active' : ''}` }
+            onClick={() => handleTabClick(index)}
+            onKeyUp={() => handleTabClick(index)}
+          >
+            {tab.props.label}
+          </button>
+        ))}
+      </div>
       <div className="tab-content">{tabs[activeTab]}</div>
     </div>
   );
