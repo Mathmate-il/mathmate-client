@@ -53,8 +53,10 @@ export default function Home() {
       <footer className="footer">
         <h2 className="heading-primary">MathMate</h2>
         <ul>
-          <img src={linkedin} className="icon" />
-          <img src={github} className="icon" />
+          <img src={linkedin} className="icon" alt="linkedin" />
+          <a href="https://github.com/Mathmate-il">
+            <img src={github} className="icon" alt="github" />
+          </a>
         </ul>
       </footer>
     </div>

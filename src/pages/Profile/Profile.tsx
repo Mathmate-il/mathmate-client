@@ -1,5 +1,8 @@
 import './Profile.style.scss';
-import { ProfileTabs } from '../../components/ProfileTabs/ProfileTabs';
+import {
+  TabItem,
+  TabsControl,
+} from '../../components/TabsControls/TabsControl';
 import mockProfilePic from '../../assets/mockProfilePic.jpg'; // with import
 import RoundedImage from '../../components/RoundedImage/RoundedImage';
 
@@ -14,7 +17,17 @@ export default function Profile() {
         height="120px"
       />
       <hr />
-      <ProfileTabs />
+      <TabsControl>
+        <TabItem label="My Bookmarks">
+          <div>Bookmarks</div>
+        </TabItem>
+        <TabItem label="My Questions">
+          <div>Questions</div>
+        </TabItem>
+        <TabItem label="My Answers">
+          <div>Answers</div>
+        </TabItem>
+      </TabsControl>
     </div>
   );
 }
