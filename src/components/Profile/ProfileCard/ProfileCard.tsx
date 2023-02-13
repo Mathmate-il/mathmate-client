@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import mockProfilePic from '../../../assets/mockProfilePic.jpg';
+import mockProfilePic from '@assets/mockProfilePic.jpg';
+import EditIcon from '@assets/edit.svg';
 import useStore, { StoreState } from '../../../store/store';
 import User from '../../../typescript/entities/User';
 import RoundedImage from '../../RoundedImage';
 import './ProfileCard.scss';
 import '../../../styles/main.scss';
-import EditIcon from '../../../assets/edit.svg';
 
 function ProfileCard() {
   const currentUser: User = useStore((state: StoreState) => state.currentUser);

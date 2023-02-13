@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import mockProfilePic from '@assets/mockProfilePic.jpg';
 import RoundedImage from '../components/RoundedImage/RoundedImage';
-import mockProfilePic from '../assets/mockProfilePic.jpg';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

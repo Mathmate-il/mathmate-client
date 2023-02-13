@@ -1,6 +1,6 @@
+import BookmarkIcon from '@assets/bookmark.svg';
 import Question from '../../../typescript/entities/Question';
 import './QuestionControl.scss';
-import BookmarkIcon from '../../../assets/bookmark.svg';
 
 interface QuestionProps {
   question: Question;
