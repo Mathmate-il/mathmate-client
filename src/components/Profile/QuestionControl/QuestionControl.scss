@@ -1,0 +1,10 @@
+@import '../../../styles/main.scss';
+
+.questioControl {
+  background-color: $color-primary-dark;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

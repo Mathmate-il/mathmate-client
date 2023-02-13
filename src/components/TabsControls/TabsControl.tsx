@@ -1,11 +1,5 @@
-import './TabsControl.style.scss';
-import React, {
-  useState,
-  Children,
-  ReactNode,
-  ReactElement,
-  useEffect,
-} from 'react';
+import './TabsControl.scss';
+import React, { useState, Children, ReactNode, ReactElement } from 'react';
 
 interface TabItemProps {
   label: string;

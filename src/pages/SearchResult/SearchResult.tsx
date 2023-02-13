@@ -1,4 +1,4 @@
-import './SearchResult.style.scss';
+import './SearchResult.scss';
 
 export default function SearchResult() {
   return <></>;

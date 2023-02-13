@@ -1,4 +1,4 @@
-import './Profile.style.scss';
+import './Profile.scss';
 import {
   TabItem,
   TabsControl,
@@ -7,7 +7,9 @@ import Footer from '../../components/Footer';
 import ProfileCard from '../../components/Profile/ProfileCard';
 import SettingsIcon from '../../assets/settings.svg';
 import LogoutIcon from '../../assets/logout.svg';
-
+import MyQuestions from '../../components/Profile/MyQuestions/MyQuestions';
+import MyBookmarks from '../../components/Profile/MyBookmarks';
+import MyAnswers from '../../components/Profile/MyAnswers';
 
 export default function Profile() {
   return (
@@ -17,13 +19,13 @@ export default function Profile() {
         <div className="mainArea">
           <TabsControl>
             <TabItem label="My Bookmarks">
-              <div>Bookmarks</div>
+              <MyBookmarks />
             </TabItem>
             <TabItem label="My Questions">
-              <div>Questions</div>
+              <MyQuestions />
             </TabItem>
             <TabItem label="My Answers">
-              <div>Answers</div>
+              <MyAnswers />
             </TabItem>
           </TabsControl>
         </div>

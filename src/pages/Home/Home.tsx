@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import GoogleAuth from '../../components/GoogleAuth';
-import './Home.style.scss';
+import './Home.scss';
 import Footer from '../../components/Footer';
 
 export default function Home() {
