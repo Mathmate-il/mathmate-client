@@ -1,5 +1,5 @@
-import BookmarkIcon from '@assets/bookmark.svg';
-import Question from '../../../typescript/entities/Question';
+import BookmarkIcon from '@/assets/bookmark.svg';
+import Question from '@/typescript/entities/Question';
 import './QuestionControl.scss';
 
 interface QuestionProps {
@@ -11,7 +11,7 @@ function QuestionControl({ question }: QuestionProps) {
     <div className="questioControl">
       <div className="header">
         <h1>{question.title}</h1>
-        <img src={BookmarkIcon} alt="bookmark" />
+        <img src={BookmarkIcon} alt="bookmark" className="bookmark" />
       </div>
       <p>{question.question}</p>
     </div>

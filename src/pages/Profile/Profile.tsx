@@ -1,15 +1,12 @@
 import './Profile.scss';
-import LogoutIcon from '@assets/logout.svg';
-import SettingsIcon from '@assets/settings.svg';
-import {
-  TabItem,
-  TabsControl,
-} from '../../components/TabsControls/TabsControl';
-import MyQuestions from '../../components/Profile/MyQuestions';
-import Footer from '../../components/Footer';
-import ProfileCard from '../../components/Profile/ProfileCard';
-import MyBookmarks from '../../components/Profile/MyBookmarks';
-import MyAnswers from '../../components/Profile/MyAnswers';
+import LogoutIcon from '@/assets/logout.svg';
+import SettingsIcon from '@/assets/settings.svg';
+import { TabItem, TabsControl } from '@/components/TabsControls/TabsControl';
+import MyQuestions from '@/components/Profile/MyQuestions/MyQuestions';
+import Footer from '@/components/Footer';
+import ProfileCard from '@/components/Profile/ProfileCard';
+import MyBookmarks from '@/components/Profile/MyBookmarks';
+import MyAnswers from '@/components/Profile/MyAnswers';
 
 export default function Profile() {
   return (

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import GoogleAuth from '@components/GoogleAuth';
+import GoogleAuth from '@/components/GoogleAuth';
 import './Home.scss';
 import Footer from '@/components/Footer';
 

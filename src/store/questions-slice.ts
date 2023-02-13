@@ -8,25 +8,7 @@ export interface QuestionsSlice {
 }
 
 export const createQuestionsSlice: StateCreator<QuestionsSlice> = (set) => ({
-  questions: [
-    {
-      id: '1',
-      question: `Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed 
-      aliquam et enim sed et enim sed jsfgku
-      occaecati beatae eaque adipisc....`,
-      title: 'Mocked Question Title',
-      createdAt: new Date().toString(),
-      owner: {
-        id: '2',
-        name: '333',
-        createdAt: new Date().toString(),
-        email: 'test@gmail.com',
-        image: '',
-      },
-      tags: [],
-      rating: 2,
-    },
-  ],
+  questions: mockedQuestions,
   selectedQuestion: undefined,
   addQuestion(question: Question) {
     set((state: QuestionsSlice) => ({
@@ -36,3 +18,57 @@ export const createQuestionsSlice: StateCreator<QuestionsSlice> = (set) => ({
     }));
   },
 });
+
+const mockedQuestions = [
+  {
+    id: '1',
+    question: `Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed 
+    aliquam et enim sed et enim sed jsfgku
+    occaecati beatae eaque adipisc....`,
+    title: 'Mocked Question Title',
+    createdAt: new Date().toString(),
+    owner: {
+      id: '2',
+      name: '333',
+      createdAt: new Date().toString(),
+      email: 'test@gmail.com',
+      image: '',
+    },
+    tags: [],
+    rating: 2,
+  },
+  {
+    id: '2',
+    question: `Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed 
+    aliquam et enim sed et enim sed jsfgku
+    occaecati beatae eaque adipisc....`,
+    title: 'Mocked Question Title',
+    createdAt: new Date().toString(),
+    owner: {
+      id: '2',
+      name: '333',
+      createdAt: new Date().toString(),
+      email: 'test@gmail.com',
+      image: '',
+    },
+    tags: [],
+    rating: 2,
+  },
+  {
+    id: '3',
+    question: `Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed 
+    aliquam et enim sed et enim sed jsfgku
+    occaecati beatae eaque adipisc....`,
+    title: 'Mocked Question Title',
+    createdAt: new Date().toString(),
+    owner: {
+      id: '2',
+      name: '333',
+      createdAt: new Date().toString(),
+      email: 'test@gmail.com',
+      image: '',
+    },
+    tags: [],
+    rating: 2,
+  },
+];
