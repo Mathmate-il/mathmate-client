@@ -3,23 +3,14 @@ import {
   TabItem,
   TabsControl,
 } from '../../components/TabsControls/TabsControl';
-import mockProfilePic from '../../assets/mockProfilePic.jpg'; // with import
-import RoundedImage from '../../components/RoundedImage/RoundedImage';
 import Footer from '../../components/Footer';
+import ProfileCard from '../../components/Profile/ProfileCard';
 
 export default function Profile() {
   return (
     <div className="root">
       <div>
-        <div>
-          <span>full name</span>
-          <RoundedImage
-            src={mockProfilePic}
-            alt="profile pic"
-            width="120px"
-            height="120px"
-          />
-        </div>
+        <ProfileCard />
         <TabsControl>
           <TabItem label="My Bookmarks">
             <div>Bookmarks</div>

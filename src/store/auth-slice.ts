@@ -11,7 +11,7 @@ export const createAuthSlice: StateCreator<AuthSlice> = (set) => ({
   currentUser: {
     id: crypto.randomUUID(),
     createdAt: new Date().toString(),
-    name: 'Michael Jorden',
+    name: 'Albert Einstein',
     image: 'https://mui.com/static/images/avatar/1.jpg',
     email: 'mymail@gmail.com',
   },
