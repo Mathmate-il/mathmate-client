@@ -16,7 +16,7 @@ function ProfileCard() {
       <div className="details">
         <div>
           <span className="heading-5">{currentUser.name}</span>
-          <img src={EditIcon} className="icon" alt="github" />
+          <img src={EditIcon} alt="github" />
         </div>
         <span className="paragraph">{currentUser.email}</span>
         <button
