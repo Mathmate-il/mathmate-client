@@ -1,5 +1,11 @@
 import './TabsControl.style.scss';
-import React, { useState, Children } from 'react';
+import React, {
+  useState,
+  Children,
+  ReactNode,
+  ReactElement,
+  useEffect,
+} from 'react';
 
 interface TabItemProps {
   label: string;
@@ -11,12 +17,12 @@ function TabItem({ children }: TabItemProps) {
 }
 
 interface TabsControlProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 function TabsControl({ children }: TabsControlProps) {
   const [activeTab, setActiveTab] = useState(0);
-  const tabs = Children.toArray(children) as React.ReactElement[];
+  const tabs = Children.toArray(children) as ReactElement[];
 
   const handleTabClick = (index: number) => {
     setActiveTab(index);
@@ -29,7 +35,7 @@ function TabsControl({ children }: TabsControlProps) {
           <button
             type="button"
             key={index} // todo: think how to fix that
-            className={`paragraph2 tab ${activeTab === index ? 'active' : ''}` }
+            className={`tab ${activeTab === index ? 'active' : ''}`}
             onClick={() => handleTabClick(index)}
             onKeyUp={() => handleTabClick(index)}
           >

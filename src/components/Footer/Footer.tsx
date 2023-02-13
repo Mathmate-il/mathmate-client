@@ -8,7 +8,11 @@ export default function Footer() {
       <h2 className="heading-primary">MathMate</h2>
       <ul>
         <img src={linkedin} className="icon" alt="linkedin" />
-        <a href="https://github.com/Mathmate-il">
+        <a
+          href="https://github.com/Mathmate-il"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={github} className="icon" alt="github" />
         </a>
       </ul>
