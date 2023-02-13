@@ -2,9 +2,17 @@
 
 .questioControl {
   background-color: $color-primary-dark;
+  width: 90vw;
+  border-radius: 0px 5px 5px 0px;
 
   .header {
     display: flex;
     justify-content: space-between;
+
+    .title{
+      font-family: 'Hind';
+      font-weight: 600;
+    }
+
   }
 }
