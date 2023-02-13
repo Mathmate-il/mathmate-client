@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import RoundedImage from '../components/RoundedImage/RoundedImage';
 import mockProfilePic from '../assets/mockProfilePic.jpg';
@@ -7,10 +6,6 @@ import mockProfilePic from '../assets/mockProfilePic.jpg';
 export default {
   title: 'Example/RoundedImage',
   component: RoundedImage,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof RoundedImage>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
