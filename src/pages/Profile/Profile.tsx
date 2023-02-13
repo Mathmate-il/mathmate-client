@@ -8,6 +8,7 @@ import ProfileCard from '../../components/Profile/ProfileCard';
 import SettingsIcon from '../../assets/settings.svg';
 import LogoutIcon from '../../assets/logout.svg';
 
+
 export default function Profile() {
   return (
     <div className="profile">
