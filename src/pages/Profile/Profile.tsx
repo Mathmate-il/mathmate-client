@@ -8,7 +8,7 @@ import ProfileCard from '../../components/Profile/ProfileCard';
 
 export default function Profile() {
   return (
-    <div className="root">
+    <div className="profile">
       <div>
         <ProfileCard />
         <TabsControl>

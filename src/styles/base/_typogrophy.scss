@@ -7,7 +7,7 @@ body {
   color: $color-white;
 }
 
-.heading-primary {
+.heading-1 {
   font-family: 'Expletus Sans', cursive;
   color: $color-white;
   text-transform: capitalize;
@@ -39,7 +39,7 @@ body {
   }
 }
 
-.heading-secondary {
+.heading-2 {
   font-family: 'Expletus Sans', cursive;
   font-size: 3.5rem;
   text-transform: uppercase;
@@ -69,10 +69,16 @@ body {
   }
 }
 
-.heading-tertiary {
+.heading-3 {
   font-size: $default-font-size;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.heading-5 {
+  font-family: 'Expletus Sans', cursive;
+  font-size: $default-font-size + 1rem;
+  font-weight: 400;
 }
 
 .paragraph {

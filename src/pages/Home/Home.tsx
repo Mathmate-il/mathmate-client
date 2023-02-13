@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <div className="home">
       <header className="header">
-        <h1 className="heading-primary">MathMate</h1>
+        <h1 className="heading-1">MathMate</h1>
         <GoogleAuth />
       </header>
       <div className="contentBody">
         <article>
-          <h1 className="heading-primary" style={{ fontSize: '48px' }}>
+          <h1 className="heading-1" style={{ fontSize: '48px' }}>
             OUR MESSAGE
           </h1>
           <p className="par">
