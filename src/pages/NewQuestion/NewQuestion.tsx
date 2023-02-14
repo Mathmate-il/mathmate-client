@@ -1,18 +1,20 @@
-import React from 'react';
+import { useState, SyntheticEvent } from 'react';
 import './NewQuestion.scss';
-import Footer from '../../components/Footer';
+import Footer from '@/components/Footer';
 import { boolean } from 'zod';
+
 const initialTags = {
   Math: false,
   Algebra: false,
   Geometry: false,
 };
+
 export default function NewQuestion() {
-  const [tags, setTags] = React.useState(initialTags);
-  const [text, setText] = React.useState('');
-  const [title, setTitle] = React.useState('');
+  const [tags, setTags] = useState(initialTags);
+  const [text, setText] = useState('');
+  const [title, setTitle] = useState('');
   const tagsList = Object.keys(initialTags);
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     console.log({ title, text, tags });
   };
@@ -23,7 +25,10 @@ export default function NewQuestion() {
       </header>
       <div className="contentBody newQ">
         <form className="form" onSubmit={handleSubmit}>
-          <h1 className="heading-1" style={{ fontSize: '48px' }}>
+          <h1
+            className="heading-1"
+            style={{ fontSize: '48px', textAlign: 'center' }}
+          >
             New Question
           </h1>
           <label htmlFor="title">Title:</label>
