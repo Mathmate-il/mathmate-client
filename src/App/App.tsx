@@ -1,7 +1,7 @@
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Route, Routes } from 'react-router-dom';
 import env from '../config/env';
-import './App.style.scss';
+import './App.scss';
 import Home from '../pages/Home';
 import NewQuestion from '../pages/NewQuestion';
 import Profile from '../pages/Profile';

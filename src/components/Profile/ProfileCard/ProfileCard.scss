@@ -1,0 +1,12 @@
+@import '../../../styles/main.scss';
+
+.profileCard {
+  display: flex;
+  flex-direction: row;
+  height: 30vh;
+
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+}

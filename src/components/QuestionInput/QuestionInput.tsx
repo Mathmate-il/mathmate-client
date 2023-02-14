@@ -1,5 +1,5 @@
-import "./QuestionInput.style.scss";
+import './QuestionInput.scss';
 
 export default function QuestionInput() {
-    return <></>;
+  return <></>;
 }

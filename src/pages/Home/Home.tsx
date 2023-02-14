@@ -1,24 +1,20 @@
 import { useNavigate } from 'react-router-dom';
-import GoogleAuth from '../../components/GoogleAuth';
-import './Home.style.scss';
-import linkedin from '../../assets/linkedin.svg';
-import github from '../../assets/github.svg';
-import useStore, { StoreState } from '../../store/store';
+import GoogleAuth from '@/components/GoogleAuth';
+import './Home.scss';
+import Footer from '@/components/Footer';
 
 export default function Home() {
-  const isLoggedIn = useStore((state: StoreState) => state.isLoggedIn);
-
   const navigate = useNavigate();
 
   return (
     <div className="home">
       <header className="header">
-        <h1 className="heading-primary">MathMate</h1>
+        <h1 className="heading-1">MathMate</h1>
         <GoogleAuth />
       </header>
       <div className="contentBody">
         <article>
-          <h1 className="heading-primary" style={{ fontSize: '48px' }}>
+          <h1 className="heading-1" style={{ fontSize: '48px' }}>
             OUR MESSAGE
           </h1>
           <p className="par">
@@ -50,15 +46,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <footer className="footer">
-        <h2 className="heading-primary">MathMate</h2>
-        <ul>
-          <img src={linkedin} className="icon" alt="linkedin" />
-          <a href="https://github.com/Mathmate-il">
-            <img src={github} className="icon" alt="github" />
-          </a>
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -5,7 +5,6 @@ export interface RoundedImageProps {
   height: string | number;
 }
 
-// eslint-disable-next-line object-curly-newline
 function RoundedImage({ src, alt, width, height }: RoundedImageProps) {
   return (
     <img
