@@ -31,15 +31,17 @@ export default function SearchResult() {
 
   return (
     <div className="searchResult">
-      <div className="question" />
-      <div className="tags">
-        <span className="tag">Math</span>
-        <span className="tag">Else</span>
-        <span className="tag">Math2</span>
+      <div className="top">
+        <div className="question" />
+        <div className="tags">
+          <span className="tag">Math</span>
+          <span className="tag">Else</span>
+          <span className="tag">Math2</span>
+        </div>
+        <button className="btn" type="button" onClick={() => {}}>
+          Search again
+        </button>
       </div>
-      <button className="btn" type="button" onClick={() => {}}>
-        Search again
-      </button>
       <div className="myQuestions">
         {questionsQuery.data.map((question: Question) => (
           <QuestionControl question={question} key={question.id} />

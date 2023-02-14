@@ -4,8 +4,7 @@ import './myQuestions.scss';
 import QuestionControl from '../../QuestionControl';
 import { getAllQuestions } from '../../fetchers/question';
 import Question from '@/typescript/entities/Question';
-import useStore from '@/store/store';
-import { StoreState } from '../../../store/store';
+import useStore, { StoreState } from '@/store/store';
 
 function MyQuestions() {
   const store: StoreState = useStore((state: StoreState) => state);
