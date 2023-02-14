@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-height: 80vh;
+  width: 82vw;
+  display: inline-flex;
 }
 
 .tags {
@@ -9,6 +12,8 @@
   flex-direction: row;
   background: white;
   justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
 }
 
 .tag {
@@ -26,6 +31,11 @@
 
 .newQ {
   height: 80vh;
+}
+
+h1 {
+  font-size: 46px;
+  text-align: center;
 }
 
 label {

@@ -21,14 +21,13 @@ export default function NewQuestion() {
   return (
     <div className="home">
       <header className="header">
-        <h1 className="heading-1">MathMate</h1>
+        <a href="/">
+          <h1 className="heading-1">MathMate</h1>
+        </a>
       </header>
       <div className="contentBody newQ">
         <form className="form" onSubmit={handleSubmit}>
-          <h1
-            className="heading-1"
-            style={{ fontSize: '48px', textAlign: 'center' }}
-          >
+          <h1 className="heading-1" style={{ fontSize: '46px' }}>
             New Question
           </h1>
           <label htmlFor="title">Title:</label>
