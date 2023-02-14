@@ -16,7 +16,7 @@
       "responses": [
         {
           "uuid": "28f08f2b-5f82-4579-b24c-0e57d6890ff9",
-          "body": "[{\r\n\t\"id\": \"1\",\r\n\t\"question\": \"Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed \\n  aliquam et enim sed et enim sed jsfgku\\n  occaecati beatae eaque adipisc....\",\r\n\t\"title\": \"Mocked Question Title\",\r\n\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\"owner\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"name\": \"333\",\r\n\t\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\t\"email\": \"test@gmail.com\",\r\n\t\t\"image\": \"\"\r\n\t},\r\n\t\"tags\": [],\r\n\t\"rating\": 2\r\n}]",
+          "body": "[{\r\n\t\"id\": \"1\",\r\n\t\"question\": \"Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed \\n  aliquam et enim sed et enim sed jsfgku\\n  occaecati beatae eaque adipisc....\",\r\n\t\"title\": \"Mocked Question Title\",\r\n\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\"owner\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"name\": \"333\",\r\n\t\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\t\"email\": \"test@gmail.com\",\r\n\t\t\"image\": \"\"\r\n\t},\r\n\t\"tags\": [],\r\n\t\"rating\": 2\r\n},\r\n{\r\n\t\"id\": \"2\",\r\n\t\"question\": \"Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed \\n  aliquam et enim sed et enim sed jsfgku\\n  occaecati beatae eaque adipisc....\",\r\n\t\"title\": \"Mocked Question Title\",\r\n\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\"owner\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"name\": \"333\",\r\n\t\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\t\"email\": \"test@gmail.com\",\r\n\t\t\"image\": \"\"\r\n\t},\r\n\t\"tags\": [],\r\n\t\"rating\": 2\r\n},\r\n{\r\n\t\"id\": \"3\",\r\n\t\"question\": \"Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed \\n  aliquam et enim sed et enim sed jsfgku\\n  occaecati beatae eaque adipisc....\",\r\n\t\"title\": \"Mocked Question Title\",\r\n\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\"owner\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"name\": \"333\",\r\n\t\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\t\"email\": \"test@gmail.com\",\r\n\t\t\"image\": \"\"\r\n\t},\r\n\t\"tags\": [],\r\n\t\"rating\": 2\r\n}]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -88,6 +88,33 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "95fbc679-6c0c-4b96-ba5d-afd086461d97",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "user/me",
+      "responses": [
+        {
+          "uuid": "1c9942a9-6077-4f38-a28b-f1e7d8d2d3a1",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -102,6 +129,10 @@
     {
       "type": "route",
       "uuid": "d38f538c-bfb7-43bf-bb27-fe7465d56382"
+    },
+    {
+      "type": "route",
+      "uuid": "95fbc679-6c0c-4b96-ba5d-afd086461d97"
     }
   ],
   "proxyMode": false,
