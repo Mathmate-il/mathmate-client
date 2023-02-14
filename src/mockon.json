@@ -1,0 +1,120 @@
+{
+  "uuid": "9b7e9598-a278-4e27-8eb2-b835b0463037",
+  "lastMigration": 25,
+  "name": "Mathmate",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "9edc43bc-bd71-4bed-9b11-764d7c05ddd0",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "question/all",
+      "responses": [
+        {
+          "uuid": "28f08f2b-5f82-4579-b24c-0e57d6890ff9",
+          "body": "[{\r\n\t\"id\": \"1\",\r\n\t\"question\": \"Mocked question Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed \\n  aliquam et enim sed et enim sed jsfgku\\n  occaecati beatae eaque adipisc....\",\r\n\t\"title\": \"Mocked Question Title\",\r\n\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\"owner\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"name\": \"333\",\r\n\t\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\t\"email\": \"test@gmail.com\",\r\n\t\t\"image\": \"\"\r\n\t},\r\n\t\"tags\": [],\r\n\t\"rating\": 2\r\n}]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "cbb0410d-ae54-4363-8128-cba655c65cd6",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "question/create",
+      "responses": [
+        {
+          "uuid": "7447e6d3-19ee-4c81-a73a-a5eaf7e3860d",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "9edc43bc-bd71-4bed-9b11-764d7c05ddd0"
+    },
+    {
+      "type": "route",
+      "uuid": "cbb0410d-ae54-4363-8128-cba655c65cd6"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}

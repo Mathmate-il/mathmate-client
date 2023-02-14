@@ -27,5 +27,8 @@ module.exports = {
     'no-console': 'off',
     'object-curly-newline': 'off',
     'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
   },
 };
