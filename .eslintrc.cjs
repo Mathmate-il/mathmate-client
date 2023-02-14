@@ -20,12 +20,16 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
     'linebreak-style': 'off',
+    'react/react-in-jsx-scope': 'off',
     'no-console': 'off',
     'object-curly-newline': 'off',
     'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'comma-dangle': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
 };
