@@ -3,12 +3,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .tags {
   display: inline-flex;
   flex-direction: row;
   background: white;
   justify-content: space-evenly;
 }
+
 .tag {
   padding: 10px;
   border-radius: 10px;
@@ -16,35 +18,42 @@
   font-weight: 800;
   font-size: 20px;
 }
+
 .qText {
   resize: none;
   font-size: 16px;
 }
+
 .newQ {
   height: 80vh;
+}
+
+label {
+  font-size: 24px;
 }
 
 input[type='checkbox']:checked + label {
   background: rgb(6, 53, 104);
 }
+
 input[type='checkbox'] {
   opacity: 0;
 }
+
 input[type='checkbox']:hover + label {
   background: rgb(6, 53, 104);
 }
+
 input[type='checkbox']:active + label {
   background-color: rgba(0, 106, 217, 0.8);
-
   transform: translateY(-4px);
 }
+
 input[type='text'] {
   height: 48px;
   font-size: 24px;
 }
-label {
-  font-size: 24px;
-}
+
 .askBtn {
   width: auto;
 }

@@ -14,7 +14,7 @@ export default function NewQuestion() {
   const tagsList = Object.keys(initialTags);
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log({ title: title, text: text, tags: tags });
+    console.log({ title, text, tags });
   };
   return (
     <div className="home">
@@ -28,6 +28,7 @@ export default function NewQuestion() {
           </h1>
           <label htmlFor="title">Title:</label>
           <input
+            id="title"
             type="text"
             name="title"
             value={title}
@@ -57,14 +58,15 @@ export default function NewQuestion() {
           </fieldset>
           <label htmlFor="text">Text:</label>
           <textarea
+            id="text"
             name="text"
             cols={42}
             rows={16}
             className="qText"
             value={text}
             onChange={(e) => setText(e.target.value)}
-          ></textarea>
-          <button className="btn" style={{ width: 'auto' }}>
+          />
+          <button type="submit" className="btn" style={{ width: 'auto' }}>
             Ask
           </button>
         </form>
