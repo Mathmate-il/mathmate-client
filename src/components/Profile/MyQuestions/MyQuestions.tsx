@@ -1,15 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import Question from '@/typescript/entities/Question';
 import './myQuestions.scss';
 import QuestionControl from '../QuestionControl';
-import { getAllQuestions } from '../../fetchers/questions';
+import { getAllQuestions } from '../../fetchers/question';
+import Question from '@/typescript/entities/Question';
+import useStore from '@/store/store';
+import { StoreState } from '../../../store/store';
 
 function MyQuestions() {
+  const store: StoreState = useStore((state: StoreState) => state);
+
   const questionsQuery = useQuery({
     queryKey: ['questions'],
     queryFn: getAllQuestions,
   });
+
+  useEffect(() => {
+    if (questionsQuery.isSuccess) {
+      store.setQuestions(questionsQuery.data);
+    }
+  }, [questionsQuery.isSuccess, questionsQuery.data]);
 
   if (questionsQuery.isLoading) {
     return <div>Loading ...</div>;

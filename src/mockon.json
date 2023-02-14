@@ -61,6 +61,33 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "d38f538c-bfb7-43bf-bb27-fe7465d56382",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "aquestion/all/filterBy/owner",
+      "responses": [
+        {
+          "uuid": "1de4618c-dd22-4d72-94e4-ebd959dea053",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -71,6 +98,10 @@
     {
       "type": "route",
       "uuid": "cbb0410d-ae54-4363-8128-cba655c65cd6"
+    },
+    {
+      "type": "route",
+      "uuid": "d38f538c-bfb7-43bf-bb27-fe7465d56382"
     }
   ],
   "proxyMode": false,
