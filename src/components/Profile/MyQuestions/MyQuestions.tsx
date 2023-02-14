@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import './myQuestions.scss';
-import QuestionControl from '../QuestionControl';
+import QuestionControl from '../../QuestionControl';
 import { getAllQuestions } from '../../fetchers/question';
 import Question from '@/typescript/entities/Question';
 import useStore from '@/store/store';

@@ -1,10 +1,11 @@
-@import '../../../styles/main.scss';
+@import '../../styles/main.scss';
 
 .questioControl {
   background-color: $color-primary-dark;
   width: 90vw;
   border-radius: 0px 5px 5px 0px;
   margin-top: 20px;
+  padding: 2%;
 
   .header {
     display: flex;
@@ -16,7 +17,6 @@
     }
 
     .bookmark {
-      margin-right: 4%;
     }
   }
 }
