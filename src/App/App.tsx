@@ -7,6 +7,7 @@ import NewQuestion from '../pages/NewQuestion';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound';
 import SearchResult from '../pages/SearchResult';
+import Question from '../pages/Question';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/searchResult" element={<SearchResult />} />
           <Route path="/newQuestion" element={<NewQuestion />} />
+          <Route path="/question" element={<Question />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
