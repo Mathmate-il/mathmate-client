@@ -10,7 +10,7 @@ function QuestionControl({ question }: QuestionProps) {
   return (
     <div className="questioControl">
       <div className="header">
-        <h1>{question.title}</h1>
+        <span className="title">{question.title}</span>
         <img src={BookmarkIcon} alt="bookmark" className="bookmark" />
       </div>
       <p>{question.question}</p>
