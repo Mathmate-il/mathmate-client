@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import mockProfilePic from '@/assets/mockProfilePic.jpg';
 import EditIcon from '@/assets/edit.svg';
-
 import './ProfileCard.scss';
 import '@/styles/main.scss';
 import User from '../../../../model/entities/User';
 import useStore, { StoreState } from '../../../../controller/store';
-import RoundedImageStories from '../../../../stories/RoundedImage.stories';
+import RoundedImage from '../../RoundedImage';
 
 function ProfileCard() {
   const currentUser: User = useStore((state: StoreState) => state.currentUser);
@@ -31,12 +30,12 @@ function ProfileCard() {
         </button>
       </div>
 
-      {/* <RoundedImageStories
+      <RoundedImage
         src={mockProfilePic}
         alt="profile pic"
         width="120px"
         height="120px"
-      /> */}
+      />
     </div>
   );
 }

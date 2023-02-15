@@ -4,7 +4,7 @@
   "name": "Mathmate",
   "endpointPrefix": "",
   "latency": 0,
-  "port": 3001,
+  "port": 3000,
   "hostname": "0.0.0.0",
   "folders": [],
   "routes": [
