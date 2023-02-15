@@ -31,5 +31,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'comma-dangle': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    'react/function-component-definition': 'off',
   },
 };
