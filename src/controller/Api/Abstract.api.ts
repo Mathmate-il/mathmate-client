@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Method } from './types';
 
 abstract class Api {
   constructor(
@@ -6,7 +7,7 @@ abstract class Api {
     protected readonly headers: unknown,
   ) {}
 
-  protected async axiosRequest(method: string, url: string, data?: unknown) {
+  protected async axiosRequest(method: Method, url: string, data?: unknown) {
     return axios({
       method,
       url: `${this.baseUrl}${url}`,
