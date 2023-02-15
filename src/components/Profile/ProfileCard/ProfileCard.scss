@@ -4,9 +4,16 @@
   display: flex;
   flex-direction: row;
   height: 30vh;
+  align-items: center;
 
   .details {
     display: flex;
     flex-direction: column;
+    margin: 20px;
+
+    .nameContainer {
+      display: flex;
+      gap: 10px;
+    }
   }
 }
