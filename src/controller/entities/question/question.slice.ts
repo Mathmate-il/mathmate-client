@@ -1,12 +1,6 @@
 import { StateCreator } from 'zustand';
-import Question from '../typescript/entities/Question';
-
-export interface QuestionSlice {
-  questions: Question[];
-  selectedQuestion?: Question;
-  addQuestion: (question: Question) => void;
-  setQuestions: (questions: Question[]) => void;
-}
+import Question from '../../../model/entities/Question';
+import { QuestionSlice } from './question.types';
 
 export const createQuestionSlice: StateCreator<QuestionSlice> = (set) => ({
   questions: [],

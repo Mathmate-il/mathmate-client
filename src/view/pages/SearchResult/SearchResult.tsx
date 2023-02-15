@@ -1,32 +1,17 @@
 import './SearchResult.scss';
-import { useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { StoreState } from '../../../controller';
-import useStore from '../../../controller/store';
-import { getAllQuestionsByOwner } from '../../components/fetchers/questionFetchers';
 import Question from '../../../model/entities/Question';
 import QuestionControl from '../../components/QuestionControl';
+import useQuestions from '../../../controller/entities/question/question.action';
 
 export default function SearchResult() {
-  const store: StoreState = useStore((state: StoreState) => state);
+  const [getAllQuestionQuery] = useQuestions();
 
-  const questionsQuery = useQuery({
-    queryKey: ['questions'],
-    queryFn: getAllQuestionsByOwner,
-  });
-
-  useEffect(() => {
-    if (questionsQuery.isSuccess) {
-      store.setQuestions(questionsQuery.data);
-    }
-  }, [questionsQuery.isSuccess, questionsQuery.data]);
-
-  if (questionsQuery.isLoading) {
+  if (getAllQuestionQuery.isLoading) {
     return <div>Loading ...</div>;
   }
 
-  if (questionsQuery.isError) {
-    console.error('Error:', questionsQuery.error);
+  if (getAllQuestionQuery.isError) {
+    console.error('Error:', getAllQuestionQuery.error);
     return <div>Error ...</div>;
   }
 
@@ -44,7 +29,7 @@ export default function SearchResult() {
         </button>
       </div>
       <div className="myQuestions">
-        {questionsQuery.data.map((question: Question) => (
+        {getAllQuestionQuery.data.map((question: Question) => (
           <QuestionControl question={question} key={question.id} />
         ))}
       </div>

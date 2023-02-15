@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand';
-import User from '../typescript/entities/User';
+import User from '../../model/entities/User';
 
 export interface AuthSlice {
   isLoggedIn: boolean;

@@ -1,5 +1,5 @@
 import BookmarkIcon from '@/assets/bookmark.svg';
-import Question from '@/types/entities/Question';
+import Question from '../../../model/entities/Question';
 import './QuestionControl.scss';
 
 interface QuestionProps {
