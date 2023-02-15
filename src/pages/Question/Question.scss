@@ -13,6 +13,10 @@
     flex-direction: column;
     gap: 20px;
 
+    .rateIcon {
+      width: 40px;
+    }
+
     .questionDetails {
       display: flex;
       justify-content: space-between;
@@ -25,7 +29,7 @@
         .userCard {
           display: flex;
           align-items: center;
-          gap:10px;
+          gap: 10px;
         }
       }
 

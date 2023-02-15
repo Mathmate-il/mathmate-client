@@ -1,5 +1,6 @@
 import CommentIcon from '@/assets/comment.svg';
 import AnswerIcon from '@/assets/answer.svg';
+import RateIcon from '@/assets/rate.svg';
 import RoundedImage from '@/components/RoundedImage';
 import Question from '@/typescript/entities/Question';
 import mockProfilePic from '@/assets/mockProfilePic.jpg';
@@ -19,11 +20,13 @@ const question: Question = {
 
 const mockAnswer: Answer = {
   id: '1',
-  answer: 'bla bla bla',
+  answer: `Natus beatae eaque adipisci perspiciatis aliquam et enim sed et enim sed 
+  aliquam et enim sed et enim sed jsfgku
+  occaecati beatae eaque adipisc....`,
   owner: {
     id: '2',
     image: '',
-    name: 'sad sa',
+    name: "user's name",
     email: 'a@a.co.il',
     createdAt: new Date().toString(),
   },
@@ -37,7 +40,10 @@ function QuestionPage() {
   return (
     <div className="questionPage">
       <div className="top">
-        <span className="heading-5">{question.title}</span>
+        <div className=''>
+          <span className="heading-5">{question.title}</span>
+          <img src={RateIcon} className="rateIcon" alt="comment" />
+        </div>
         <p>{question.question}</p>
         <div className="questionDetails">
           <div className="author">
