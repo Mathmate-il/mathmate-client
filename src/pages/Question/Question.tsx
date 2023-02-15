@@ -40,7 +40,7 @@ function QuestionPage() {
   return (
     <div className="questionPage">
       <div className="top">
-        <div className=''>
+        <div className="titleContainer">
           <span className="heading-5">{question.title}</span>
           <img src={RateIcon} className="rateIcon" alt="comment" />
         </div>
@@ -59,14 +59,16 @@ function QuestionPage() {
             </div>
           </div>
           <div className="actions">
-            <div>
-              <button className="btnAction" type="button">
+            <div className="actionBtnContainer">
+              <button type="button" className="btnAction">
                 Comment
               </button>
               <img src={CommentIcon} className="icon" alt="comment" />
             </div>
-            <div>
-              <button type="button">Answer</button>
+            <div className="actionBtnContainer">
+              <button type="button" className="btnAction">
+                Answer
+              </button>
               <img src={AnswerIcon} className="icon" alt="answer" />
             </div>
           </div>
