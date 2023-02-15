@@ -1,0 +1,34 @@
+@import '../../../styles/abstracts/variables';
+
+.home {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+  background-image: url('../../../../src/assets/backgournd.png');
+
+  .header {
+    font-family: 'Expletus Sans';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.035em;
+    text-align: left;
+  }
+
+  .contentBody {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20;
+  }
+  .links {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}

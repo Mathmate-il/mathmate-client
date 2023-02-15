@@ -1,0 +1,35 @@
+@import '../../../styles/main.scss';
+
+.searchResult {
+  background-color: $color-white;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+
+  .top {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .question {
+      height: 20vh;
+      border: 2px solid $color-secondary-light;
+      background-color: white;
+    }
+
+    .tags {
+      display: flex;
+      gap: 20px;
+    }
+
+    .tag {
+      background-color: $color-primary;
+      padding: 3px 10px;
+      border-radius: 5px;
+      box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.2);
+      font-family: 'Hind';
+      font-weight: 700;
+    }
+  }
+}

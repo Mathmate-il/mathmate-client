@@ -1,5 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { TabsControl, TabItem } from '../components/TabsControls/TabsControl';
+import {
+  TabsControl,
+  TabItem,
+} from '../view/components/TabsControls/TabsControl';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

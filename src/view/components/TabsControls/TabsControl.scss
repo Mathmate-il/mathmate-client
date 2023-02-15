@@ -1,0 +1,23 @@
+@import '../../../styles/main.scss';
+
+.tabsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tab {
+  background-color: $color-primary;
+  border-width: 0px;
+  padding: 2rem 0rem;
+  color: $color-white;
+  font-weight: 400;
+  font-family: 'Hind';
+  flex: 1;
+
+  &:focus,
+  &:active {
+    font-weight: 700;
+    border-bottom: 3px solid $color-white;
+  }
+}

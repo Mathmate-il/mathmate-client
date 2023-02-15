@@ -1,0 +1,18 @@
+@import '../../../styles/main.scss';
+
+.profile {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  max-height: 100vh;
+
+  .mainArea {
+    height: 60vh;
+  }
+
+  .btnText {
+    font-family: 'Hind';
+    font-weight: 500;
+  }
+}
