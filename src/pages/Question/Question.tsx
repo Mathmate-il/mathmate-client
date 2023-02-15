@@ -41,7 +41,7 @@ function QuestionPage() {
     <div className="questionPage">
       <div className="top">
         <div className="titleContainer">
-          <span className="heading-5">{question.title}</span>
+          <span className="heading-3">{question.title}</span>
           <img src={RateIcon} className="rateIcon" alt="comment" />
         </div>
         <p>{question.question}</p>
