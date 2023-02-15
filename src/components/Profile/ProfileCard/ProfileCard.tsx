@@ -18,7 +18,7 @@ function ProfileCard() {
           <span className="heading-5">{currentUser.name}</span>
           <img src={EditIcon} className="icon" alt="github" />
         </div>
-        <span className="paragraph">{currentUser.email}</span>
+        <span className="p1">{currentUser.email}</span>
         <button
           className="btn-outlined"
           type="button"

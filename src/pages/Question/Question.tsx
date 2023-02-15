@@ -4,6 +4,9 @@ import RoundedImage from '@/components/RoundedImage';
 import Question from '@/typescript/entities/Question';
 import mockProfilePic from '@/assets/mockProfilePic.jpg';
 import './Question.scss';
+import '@/styles/main.scss';
+import AnswerControl from '../../components/AnswerControl/AnswerControl';
+import Answer from '../../typescript/entities/Answer';
 
 const question: Question = {
   id: '1',
@@ -12,6 +15,22 @@ const question: Question = {
   voluptatem quam temporibus ullam quis commodi accusamus et. Ratione aut
   magni. Est fugiat culpa. Veniam enim voluptatem vel qui ad nesciunt.`,
   createdAt: new Date().toString(),
+};
+
+const mockAnswer: Answer = {
+  id: '1',
+  answer: 'bla bla bla',
+  owner: {
+    id: '2',
+    image: '',
+    name: 'sad sa',
+    email: 'a@a.co.il',
+    createdAt: new Date().toString(),
+  },
+  createdAt: '',
+  isChosen: false,
+  relatedQuestion: '2',
+  rate: 0,
 };
 
 function QuestionPage() {
@@ -23,14 +42,14 @@ function QuestionPage() {
         <div className="questionDetails">
           <div className="author">
             <span>Author:</span>
-            <div>
+            <div className="userCard">
               <RoundedImage
                 src={mockProfilePic}
                 alt="profile pic"
                 width="40px"
                 height="40px"
               />
-              <span>UserName</span>
+              <span className="p2">UserName</span>
             </div>
           </div>
           <div className="actions">
@@ -45,9 +64,15 @@ function QuestionPage() {
               <img src={AnswerIcon} className="icon" alt="answer" />
             </div>
           </div>
-          <div>
-            <span>Top Answer:</span>
-          </div>
+        </div>
+        <div className="topAnswer">
+          <div className="topAnswerTitle p1--bold">Top Answer:</div>
+          <hr className="topAnswerHr" />
+          <AnswerControl answer={mockAnswer} />
+        </div>
+        <div className="comments">
+          <div className="commentsTitle p1--bold">Comments:</div>
+          <hr />
         </div>
       </div>
     </div>

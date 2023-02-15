@@ -81,10 +81,32 @@ body {
   font-weight: 400;
 }
 
-.paragraph {
-  font-size: $default-font-size;
+.p1 {
+  font-size: $default-font-size + 0.8rem;
+  font: 'hind';
+  font-weight: 400;
 
   &:not(:last-child) {
     margin-bottom: 3rem;
+  }
+
+  &--bold {
+    font-size: $default-font-size + 0.8rem;
+    font-weight: 700;
+  }
+}
+
+.p2 {
+  font-size: $default-font-size + 0.7rem;
+  font: 'hind';
+  font-weight: 400;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  &--bold {
+    font-size: $default-font-size + 0.8rem;
+    font-weight: 700;
   }
 }

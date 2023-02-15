@@ -21,6 +21,12 @@
         display: flex;
         flex-direction: column;
         flex: 1;
+
+        .userCard {
+          display: flex;
+          align-items: center;
+          gap:10px;
+        }
       }
 
       .actions {
@@ -49,5 +55,24 @@
 
   .icon {
     width: 17px;
+  }
+
+  .topAnswer {
+    color: #7f4992;
+
+    .topAnswerTitle {
+      text-align: center;
+    }
+
+    .topAnswerHr {
+      background-color: #7f4992;
+    }
+  }
+
+  .comments {
+    color: $color-primary-dark;
+    .commentsTitle {
+      text-align: center;
+    }
   }
 }
