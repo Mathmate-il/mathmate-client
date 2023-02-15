@@ -1,7 +1,7 @@
 import React from 'react';
 import BookmarkIcon from '@/assets/bookmark.svg';
 import mockProfilePic from '@/assets/mockProfilePic.jpg';
-import Answer from '@/typescript/entities/Answer';
+import Answer from '@/types/entities/Answer';
 import RoundedImage from '@/components/RoundedImage';
 import './AnswerControl.scss';
 

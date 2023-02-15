@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import mockProfilePic from '@/assets/mockProfilePic.jpg';
 import EditIcon from '@/assets/edit.svg';
 import useStore, { StoreState } from '@/store/store';
-import User from '@/typescript/entities/User';
+import User from '@/types/entities/User';
 import RoundedImage from '@/components/RoundedImage';
 import './ProfileCard.scss';
 import '@/styles/main.scss';

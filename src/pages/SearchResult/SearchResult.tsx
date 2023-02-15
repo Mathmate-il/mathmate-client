@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import QuestionControl from '@/components/QuestionControl';
 import { getAllQuestions } from '@/components/fetchers/questionFetchers';
-import Question from '@/typescript/entities/Question';
+import Question from '@/types/entities/Question';
 import useStore, { StoreState } from '@/store/store';
 
 export default function SearchResult() {

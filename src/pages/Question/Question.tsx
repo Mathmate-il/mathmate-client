@@ -2,7 +2,7 @@ import CommentIcon from '@/assets/comment.svg';
 import AnswerIcon from '@/assets/answer.svg';
 import RateIcon from '@/assets/rate.svg';
 import RoundedImage from '@/components/RoundedImage';
-import Question from '@/typescript/entities/Question';
+import Question from '@/types/entities/Question';
 import mockProfilePic from '@/assets/mockProfilePic.jpg';
 import './Question.scss';
 import '@/styles/main.scss';
