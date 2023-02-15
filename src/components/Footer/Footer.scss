@@ -1,0 +1,22 @@
+@import '../../styles/main.scss';
+
+.footer {
+  .mathMate {
+    font-family: 'Expletus Sans';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.035em;
+    text-align: left;
+  }
+
+  .iconsContainer{
+    display: flex;
+    gap: 10px;
+  }
+
+  .icon {
+    height: 27px;
+    width: 27px;
+  }
+}

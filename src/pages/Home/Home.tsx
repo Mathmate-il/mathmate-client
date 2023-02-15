@@ -9,15 +9,13 @@ export default function Home() {
   return (
     <div className="home">
       <header className="header">
-        <h1 className="heading-1">MathMate</h1>
+        <span>MathMate</span>
         <GoogleAuth />
       </header>
       <div className="contentBody">
         <article>
-          <h1 className="heading-1" style={{ fontSize: '48px' }}>
-            OUR MESSAGE
-          </h1>
-          <p className="par">
+          <h1 className="heading-3">OUR MESSAGE</h1>
+          <p className="p1">
             A Description about our mission
             <br />
             in two lines something that sums
@@ -27,7 +25,7 @@ export default function Home() {
         </article>
         <div className="links">
           <button
-            className="btn btn--white "
+            className="btn btn--white"
             type="button"
             onClick={() => {
               navigate('/newQuestion');
