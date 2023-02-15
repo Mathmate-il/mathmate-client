@@ -12,7 +12,7 @@ body {
   color: $color-white;
   text-transform: capitalize;
   backface-visibility: hidden;
-  font-size: $default-font-size + 2.4rem;
+  font-size: 4rem;
 
   @media only screen and (max-width: 767px) {
     font-size: 3rem;
@@ -21,7 +21,7 @@ body {
 
 .heading-2 {
   font-family: 'Expletus Sans', cursive;
-  font-size: $default-font-size + 1.4rem;
+  font-size: 48px;
   font-weight: 700;
   display: inline-block;
   -webkit-background-clip: text;
@@ -40,26 +40,26 @@ body {
 
 .heading-3 {
   font-family: 'Expletus Sans', cursive;
-  font-size: $default-font-size + 1.15rem;
+  font-size: 44px;
   font-weight: 400;
 }
 
 .heading-4 {
   font-family: 'Expletus Sans', cursive;
-  font-size: $default-font-size + 0.4rem;
+  font-size: 44px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 .heading-5 {
   font-family: 'Expletus Sans', cursive;
-  font-size: $default-font-size - 0.1rem;
+  font-size: 24px;
   font-weight: 400;
 }
 
 .p1 {
-  font-size: $default-font-size + 0.525rem;
-  font-family: 'hind';
+  font-size: $default-font-size + 0.8rem;
+  font: 'hind';
   font-weight: 400;
 
   &:not(:last-child) {
