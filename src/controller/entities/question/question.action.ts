@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 import Question from '../../../model/entities/Question';
 import Tag from '../../../model/entities/Tag';
 import mainService from '../../Api/mainService';
@@ -42,12 +43,15 @@ export function useGetAllQuestionsByOwnerQuery(ownerID: string) {
 
 export function useCreateQuestionMutation() {
   const store = useStore((state) => state);
+  const navigate = useNavigate();
 
   return useMutation(
     (question: Question) => mainService.createQuestion(question),
     {
       onSuccess: (data) => {
         store.addQuestion(data);
+        store.setSelectedQuestion(data);
+        navigate('/searchResult');
       },
     },
   );

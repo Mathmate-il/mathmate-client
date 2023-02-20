@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState, SyntheticEvent } from 'react';
 import TagsInput from 'react-tagsinput';
 import 'react-tagsinput/react-tagsinput.css';
@@ -42,8 +41,8 @@ export default function NewQuestion() {
     }));
   };
 
-  const handleTagsChanged = (tags) => {
-    setTags(tags);
+  const handleTagsChanged = (newTags) => {
+    setTags(newTags);
   };
 
   return (
@@ -66,14 +65,14 @@ export default function NewQuestion() {
             value={question.title}
             onChange={handleInputChanged}
           />
-          <label htmlFor="tag">Tags:</label>
+          <label htmlFor="tagsInput">Tags:</label>
           <TagsInput
             value={tags}
             onChange={handleTagsChanged}
             onlyUnique
-            inputProps={{ placeHolder: '' }}
+            inputProps={{ placeholder: '' }}
           />
-          <label htmlFor="text">Text:</label>
+          <label htmlFor="question">Text:</label>
           <textarea
             id="question"
             name="question"

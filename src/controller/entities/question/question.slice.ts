@@ -18,4 +18,10 @@ export const createQuestionSlice: StateCreator<QuestionSlice> = (set) => ({
       questions,
     }));
   },
+  setSelectedQuestion: (question: Question) => {
+    set((state: QuestionSlice) => ({
+      ...state,
+      selectedQuestion: question,
+    }));
+  },
 });

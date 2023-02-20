@@ -8,6 +8,16 @@ import NotFound from '../../pages/NotFound';
 import Question from '../../pages/Question';
 import { Home } from '../../pages/Home';
 import { SearchResult } from '../../pages/SearchResult';
+import useStore from '../../../controller/store';
+
+// show the state in Redux Devtools Extension
+const connection = window.__REDUX_DEVTOOLS_EXTENSION__?.connect({
+  name: 'XXX',
+});
+connection?.init(useStore.getState());
+useStore.subscribe((newState) => {
+  connection?.send('state', newState);
+});
 
 function App() {
   return (

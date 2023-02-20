@@ -1,11 +1,16 @@
 import './SearchResult.scss';
+import TagsInput from 'react-tagsinput';
+import { useState } from 'react';
 import Question from '../../../model/entities/Question';
 import QuestionControl from '../../components/QuestionControl';
 import { useGetAllQuestionsQuery } from '../../../controller/entities/question/question.action';
-
+import useStore from '../../../controller/store';
 
 export default function SearchResult() {
+  const store = useStore((state) => state);
+
   const getAllQuestionQuery = useGetAllQuestionsQuery();
+  const [tags] = useState([]);
 
   if (getAllQuestionQuery.isLoading) {
     return <div>Loading ...</div>;
@@ -20,11 +25,7 @@ export default function SearchResult() {
     <div className="searchResult">
       <div className="top">
         <div className="question" />
-        <div className="tags">
-          <span className="tag">Math</span>
-          <span className="tag">Else</span>
-          <span className="tag">Math2</span>
-        </div>
+        <TagsInput value={tags} disabled />
         <button className="btn" type="button" onClick={() => {}}>
           Search again
         </button>

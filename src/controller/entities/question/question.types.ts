@@ -5,4 +5,5 @@ export interface QuestionSlice {
   selectedQuestion?: Question;
   addQuestion: (question: Question) => void;
   setQuestions: (questions: Question[]) => void;
+  setSelectedQuestion: (question: Question) => void;
 }
