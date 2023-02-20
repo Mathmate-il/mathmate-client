@@ -28,6 +28,18 @@ export function useGetAllQuestionsByTagsQuery(tags: Tag[]) {
   });
 }
 
+export function useGetAllQuestionsByOwnerQuery(ownerID: string) {
+  const store = useStore((state) => state);
+
+  return useQuery({
+    queryKey: ['questions', ownerID],
+    queryFn: () => mainService.getAllQuestionsByOwner(ownerID),
+    onSuccess: (data) => {
+      store.setQuestions(data);
+    },
+  });
+}
+
 export function useCreateQuestionMutation() {
   const store = useStore((state) => state);
 

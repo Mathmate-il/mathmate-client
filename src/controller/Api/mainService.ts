@@ -40,35 +40,22 @@ class MainService extends Api {
   };
 
   getAllQuestionsByTags = async (tags: Tag[]) => {
-    try {
-      const response = await this.axiosRequest(
-        Method.GET,
-        '/question/all/filterBy/tags',
-        tags,
-      );
-      if (response.status !== StatusCode.OK) {
-        return await Promise.reject(response.data);
-      }
-      return response.data;
-    } catch (error) {
-      return await Promise.reject(error);
-    }
+    const response = await this.axiosRequest(
+      Method.GET,
+      '/question/all/filterBy/tags',
+      tags,
+    );
+
+    return response.data;
   };
 
   getAllQuestionsByOwner = async (ownerID: string) => {
-    try {
-      const response = await this.axiosRequest(
-        Method.GET,
-        '/question/all/filterBy/owner',
-        ownerID,
-      );
-      if (response.status !== StatusCode.OK) {
-        return await Promise.reject(response.data);
-      }
-      return response.data;
-    } catch (error) {
-      return await Promise.reject(error);
-    }
+    const response = await this.axiosRequest(
+      Method.GET,
+      '/question/all/filterBy/owner',
+      ownerID,
+    );
+    return response.data;
   };
 
   getAllTags = async () => {
