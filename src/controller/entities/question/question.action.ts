@@ -1,46 +1,48 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
 import Question from '../../../model/entities/Question';
 import Tag from '../../../model/entities/Tag';
 import mainService from '../../Api/mainService';
-import useStore, { StoreState } from '../../store';
+import useStore from '../../store';
 
-const useQuestions = () => {
-  const store: StoreState = useStore((state: StoreState) => state);
+const useGetAllQuestionsQuery = () => {
+  const store = useStore((state) => state);
 
-  // getAllQuestion
-  const getAllQuestionQuery = useQuery({
+  return useQuery({
     queryKey: ['questions'],
     queryFn: mainService.getAllQuestions,
+    onSuccess: (data) => {
+      store.setQuestions(data);
+    },
   });
-
-  useEffect(() => {
-    if (getAllQuestionQuery.isSuccess) {
-      store.setQuestions(getAllQuestionQuery.data);
-    }
-  }, [getAllQuestionQuery.isSuccess, getAllQuestionQuery.data]);
-
-  // useGetAllQuestionsByTags
-  const useGetAllQuestionsByTagsQuery = (tags: Tag[]) =>
-    useQuery({
-      queryKey: ['questions', tags],
-      queryFn: () => mainService.getAllQuestionsByTags,
-    });
-
-  useEffect(() => {
-    if (getAllQuestionQuery.isSuccess) {
-      store.setQuestions(getAllQuestionQuery.data);
-    }
-  }, [getAllQuestionQuery.isSuccess, getAllQuestionQuery.data]);
-
-  const useCreateQuestionMutation = (question: Question) =>
-    useMutation(() => mainService.createQuestion(question));
-
-  return [
-    getAllQuestionQuery,
-    useCreateQuestionMutation,
-    useGetAllQuestionsByTagsQuery,
-  ];
 };
 
-export default useQuestions;
+const useGetAllQuestionsByTagsQuery = (tags: Tag[]) => {
+  const store = useStore((state) => state);
+
+  return useQuery({
+    queryKey: ['questions', tags],
+    queryFn: () => mainService.getAllQuestionsByTags(tags),
+    onSuccess: (data) => {
+      store.setQuestions(data);
+    },
+  });
+};
+
+const useCreateQuestionMutation = () => {
+  const store = useStore((state) => state);
+
+  return useMutation(
+    (question: Question) => mainService.createQuestion(question),
+    {
+      onSuccess: (_, variables) => {
+        store.addQuestion(variables);
+      },
+    },
+  );
+};
+
+export {
+  useGetAllQuestionsQuery,
+  useGetAllQuestionsByTagsQuery,
+  useCreateQuestionMutation,
+};

@@ -1,24 +1,54 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState, SyntheticEvent } from 'react';
-import { boolean } from 'zod';
+import TagsInput from 'react-tagsinput';
+import 'react-tagsinput/react-tagsinput.css';
+import { useCreateQuestionMutation } from '../../../controller/entities/question/question.action';
+import Question from '../../../model/entities/Question';
 import Footer from '../../components/Footer';
 import './NewQuestion.scss';
 
-const initialTags = {
-  Math: false,
-  Algebra: false,
-  Geometry: false,
+const initQuestion = {
+  id: crypto.randomUUID().toString(),
+  createdAt: new Date().toString(),
+  question: '',
+  title: '',
+  tags: [],
+  rating: 0,
+  owner: {
+    id: crypto.randomUUID().toString(),
+    createdAt: new Date().toString(),
+    email: '',
+    name: '',
+    image: '',
+  },
 };
 
 export default function NewQuestion() {
-  const [tags, setTags] = useState(initialTags);
-  const [text, setText] = useState('');
-  const [title, setTitle] = useState('');
-  const tagsList = Object.keys(initialTags);
-  const handleSubmit = (e: SyntheticEvent) => {
+  const [tags, setTags] = useState([]);
+  const createQuestionMutation = useCreateQuestionMutation();
+
+  // todo: shold remove all this objects initializations
+  const [question, setQuestion] = useState<Question>(initQuestion);
+
+  const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ title, text, tags });
+
+    console.log(question);
+    createQuestionMutation.mutate(question);
   };
+
+  const handleInputChanged = (e: any) => {
+    setQuestion((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  };
+
+  const handleTagsChanged = (tags) => {
+    setTags(tags);
+    console.log(tags);
+  };
+
   return (
     <div className="home">
       <header className="header">
@@ -36,40 +66,20 @@ export default function NewQuestion() {
             id="title"
             type="text"
             name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={question.title}
+            onChange={handleInputChanged}
           />
           <label htmlFor="tag">Tags:</label>
-          <fieldset className="tags">
-            {tagsList.map((option) => (
-              <div key={option} className="tags" style={{ padding: '5px' }}>
-                <input
-                  type="checkbox"
-                  id={option}
-                  value={option}
-                  checked={tags[option as keyof typeof boolean]}
-                  onChange={(event) => {
-                    setTags({
-                      ...tags,
-                      [option]: event.target.checked,
-                    });
-                  }}
-                />
-                <label className="tag" htmlFor={option}>
-                  {option}
-                </label>
-              </div>
-            ))}
-          </fieldset>
+          <TagsInput value={tags} onChange={handleTagsChanged} />
           <label htmlFor="text">Text:</label>
           <textarea
-            id="text"
-            name="text"
+            id="question"
+            name="question"
             cols={42}
             rows={16}
             className="qText"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
+            value={question.question}
+            onChange={handleInputChanged}
           />
           <button type="submit" className="btn" style={{ width: 'auto' }}>
             Ask

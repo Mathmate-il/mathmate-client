@@ -1,10 +1,11 @@
 import './SearchResult.scss';
 import Question from '../../../model/entities/Question';
 import QuestionControl from '../../components/QuestionControl';
-import useQuestions from '../../../controller/entities/question/question.action';
+import { useGetAllQuestionsQuery } from '../../../controller/entities/question/question.action';
+
 
 export default function SearchResult() {
-  const [getAllQuestionQuery] = useQuestions();
+  const getAllQuestionQuery = useGetAllQuestionsQuery();
 
   if (getAllQuestionQuery.isLoading) {
     return <div>Loading ...</div>;
