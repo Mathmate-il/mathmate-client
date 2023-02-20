@@ -4,7 +4,7 @@ import Tag from '../../../model/entities/Tag';
 import mainService from '../../Api/mainService';
 import useStore from '../../store';
 
-const useGetAllQuestionsQuery = () => {
+export function useGetAllQuestionsQuery() {
   const store = useStore((state) => state);
 
   return useQuery({
@@ -14,9 +14,9 @@ const useGetAllQuestionsQuery = () => {
       store.setQuestions(data);
     },
   });
-};
+}
 
-const useGetAllQuestionsByTagsQuery = (tags: Tag[]) => {
+export function useGetAllQuestionsByTagsQuery(tags: Tag[]) {
   const store = useStore((state) => state);
 
   return useQuery({
@@ -26,9 +26,9 @@ const useGetAllQuestionsByTagsQuery = (tags: Tag[]) => {
       store.setQuestions(data);
     },
   });
-};
+}
 
-const useCreateQuestionMutation = () => {
+export function useCreateQuestionMutation() {
   const store = useStore((state) => state);
 
   return useMutation(
@@ -39,10 +39,4 @@ const useCreateQuestionMutation = () => {
       },
     },
   );
-};
-
-export {
-  useGetAllQuestionsQuery,
-  useGetAllQuestionsByTagsQuery,
-  useCreateQuestionMutation,
-};
+}

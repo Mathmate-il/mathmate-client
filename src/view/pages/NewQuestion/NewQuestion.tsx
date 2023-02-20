@@ -44,7 +44,6 @@ export default function NewQuestion() {
 
   const handleTagsChanged = (tags) => {
     setTags(tags);
-    console.log(tags);
   };
 
   return (
@@ -68,7 +67,12 @@ export default function NewQuestion() {
             onChange={handleInputChanged}
           />
           <label htmlFor="tag">Tags:</label>
-          <TagsInput value={tags} onChange={handleTagsChanged} />
+          <TagsInput
+            value={tags}
+            onChange={handleTagsChanged}
+            onlyUnique
+            inputProps={{ placeHolder: '' }}
+          />
           <label htmlFor="text">Text:</label>
           <textarea
             id="question"
@@ -79,7 +83,7 @@ export default function NewQuestion() {
             value={question.question}
             onChange={handleInputChanged}
           />
-          <button type="submit" className="btn" style={{ width: 'auto' }}>
+          <button type="submit" className="btn">
             Ask
           </button>
         </form>
