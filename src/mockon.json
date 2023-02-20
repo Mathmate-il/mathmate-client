@@ -43,7 +43,7 @@
       "responses": [
         {
           "uuid": "7447e6d3-19ee-4c81-a73a-a5eaf7e3860d",
-          "body": "{}",
+          "body": "{\r\n\t\"id\": \"1\",\r\n\t\"question\":\"{{body 'question'}}\",\r\n\t\"title\": \"{{body 'title'}}\",\r\n\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\"owner\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"name\": \"333\",\r\n\t\t\"createdAt\": \"Tue Feb 14 2023 14:45:10 GMT+0200 (Israel Standard Time)\",\r\n\t\t\"email\": \"test@gmail.com\",\r\n\t\t\"image\": \"\"\r\n\t},\r\n\t\"tags\": [],\r\n\t\"rating\": \"{{body 'rating'}}\",\r\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

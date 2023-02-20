@@ -25,31 +25,18 @@ class MainService extends Api {
   };
 
   getAllQuestions = async () => {
-    try {
-      const response = await this.axiosRequest(Method.GET, '/question/all');
-      if (response.status !== StatusCode.OK) {
-        return await Promise.reject(response.data);
-      }
-      return response.data;
-    } catch (error) {
-      return await Promise.reject(error);
-    }
+    const response = await this.axiosRequest(Method.GET, '/question/all');
+    return response.data;
   };
 
   createQuestion = async (question: Question) => {
-    try {
-      const response = await this.axiosRequest(
-        Method.POST,
-        '/question/create',
-        question,
-      );
-      if (response.status !== StatusCode.OK) {
-        return await Promise.reject(response.data);
-      }
-      return response.data;
-    } catch (error) {
-      return await Promise.reject(error);
-    }
+    const response = await this.axiosRequest(
+      Method.POST,
+      '/question/create',
+      question,
+    );
+
+    return response.data;
   };
 
   getAllQuestionsByTags = async (tags: Tag[]) => {

@@ -32,8 +32,6 @@ export default function NewQuestion() {
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    console.log(question);
     createQuestionMutation.mutate(question);
   };
 

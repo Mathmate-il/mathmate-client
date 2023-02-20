@@ -34,8 +34,8 @@ const useCreateQuestionMutation = () => {
   return useMutation(
     (question: Question) => mainService.createQuestion(question),
     {
-      onSuccess: (_, variables) => {
-        store.addQuestion(variables);
+      onSuccess: (data) => {
+        store.addQuestion(data);
       },
     },
   );
