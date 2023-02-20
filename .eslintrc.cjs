@@ -32,5 +32,6 @@ module.exports = {
     'comma-dangle': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'react/function-component-definition': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
 };

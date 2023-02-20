@@ -1,4 +1,6 @@
+import env from '../../config/env';
 import Question from '../../model/entities/Question';
+import Tag from '../../model/entities/Tag';
 import User from '../../model/entities/User';
 import Api from './Abstract.api';
 import { Method, StatusCode } from './types';
@@ -8,7 +10,7 @@ class MainService extends Api {
     super(baseUrl, headers);
   }
 
-  public async getJwtFromGoogleClientCredentials(googleCredentials: string) {
+  getJwtFromGoogleClientCredentials = async (googleCredentials: string) => {
     try {
       const response = await this.axiosRequest(Method.POST, '/google/getJwt', {
         googleCredentials,
@@ -20,9 +22,9 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async getAllQuestions() {
+  getAllQuestions = async () => {
     try {
       const response = await this.axiosRequest(Method.GET, '/question/all');
       if (response.status !== StatusCode.OK) {
@@ -32,9 +34,9 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async createQuestion(question: Question) {
+  createQuestion = async (question: Question) => {
     try {
       const response = await this.axiosRequest(
         Method.POST,
@@ -48,13 +50,14 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async getAllQuestionsByTags() {
+  getAllQuestionsByTags = async (tags: Tag[]) => {
     try {
       const response = await this.axiosRequest(
         Method.GET,
         '/question/all/filterBy/tags',
+        tags,
       );
       if (response.status !== StatusCode.OK) {
         return await Promise.reject(response.data);
@@ -63,13 +66,14 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async getAllQuestionsByOwner() {
+  getAllQuestionsByOwner = async (ownerID: string) => {
     try {
       const response = await this.axiosRequest(
         Method.GET,
         '/question/all/filterBy/owner',
+        ownerID,
       );
       if (response.status !== StatusCode.OK) {
         return await Promise.reject(response.data);
@@ -78,9 +82,9 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async getAllTags() {
+  getAllTags = async () => {
     try {
       const response = await this.axiosRequest(Method.GET, '/tags/all');
       if (response.status !== StatusCode.OK) {
@@ -90,9 +94,9 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async createBookmark() {
+  createBookmark = async () => {
     try {
       const response = await this.axiosRequest(Method.POST, '/bookmark/create');
       if (response.status !== StatusCode.OK) {
@@ -102,9 +106,9 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async findUser(user: User) {
+  findUser = async (user: User) => {
     try {
       const response = await this.axiosRequest(Method.GET, '/users/me', user);
       if (response.status !== StatusCode.OK) {
@@ -114,9 +118,9 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 
-  public async updateUser(user: User) {
+  updateUser = async (user: User) => {
     try {
       const response = await this.axiosRequest(
         Method.PATCH,
@@ -130,9 +134,9 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
-  }
+  };
 }
 
-const mainService = new MainService('http://localhost:3000', {});
+const mainService = new MainService(env.SERVER_URL, {});
 
 export default mainService;

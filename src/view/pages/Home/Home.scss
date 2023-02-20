@@ -6,6 +6,9 @@
   display: flex;
   height: 100vh;
   background-image: url('../../../../src/assets/backgournd.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 
   .header {
     font-family: 'Expletus Sans';
