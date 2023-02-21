@@ -50,7 +50,6 @@ export default function NewQuestion() {
         owner: currentUser,
         tags: mockTags,
       };
-
       createQuestionMutation.mutate(updatedQuestion);
     }
   };
