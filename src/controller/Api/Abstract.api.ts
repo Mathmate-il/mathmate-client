@@ -19,6 +19,7 @@ abstract class Api {
       method,
       url: fullUrl,
       headers,
+      data,
     } as AxiosRequestConfig);
   }
 }
