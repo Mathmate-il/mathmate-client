@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, HeadersDefaults } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { Method } from './types';
 
 abstract class Api {

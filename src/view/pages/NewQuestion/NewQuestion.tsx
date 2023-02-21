@@ -10,8 +10,8 @@ import Footer from '../../components/Footer';
 import './NewQuestion.scss';
 
 const initQuestion = {
-  id: crypto.randomUUID().toString(),
-  createdAt: new Date().toString(),
+  id: '',
+  createdAt: '',
   question: '',
   title: '',
   tags: [],
