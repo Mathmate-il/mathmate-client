@@ -1,4 +1,3 @@
-import { Axios, AxiosHeaders } from 'axios';
 import env from '../../config/env';
 import Question from '../../model/entities/Question';
 import Tag from '../../model/entities/Tag';
@@ -26,42 +25,73 @@ class MainService extends Api {
   };
 
   getAllQuestions = async () => {
-    const response = await this.axiosRequest(Method.GET, '/question/all');
-    return response.data;
+    try {
+      const response = await this.axiosRequest(Method.GET, '/question/all');
+      if (response.status !== StatusCode.OK) {
+        return await Promise.reject(response.data);
+      }
+      return response.data;
+    } catch (error) {
+      return await Promise.reject(error);
+    }
   };
 
-  createQuestion = async (question: Question) => {
-    const response = await this.axiosRequest(
-      Method.POST,
-      '/question/create',
-      question,
-    );
+  createQuestion = async (token: string, question: Question) => {
+    try {
+      const response = await this.axiosRequest(
+        Method.POST,
+        '/question/create',
+        question,
+        {
+          Authorization: `Bearer ${token}`,
+        },
+      );
 
-    return response.data;
+      if (response.status !== StatusCode.OK) {
+        return await Promise.reject(response.data);
+      }
+      return response.data;
+    } catch (error) {
+      return await Promise.reject(error);
+    }
   };
 
   getAllQuestionsByTags = async (tags: Tag[]) => {
-    const response = await this.axiosRequest(
-      Method.GET,
-      '/question/all/filterBy/tags',
-      tags,
-    );
+    try {
+      const response = await this.axiosRequest(
+        Method.GET,
+        '/question/all/filterBy/tags',
+        tags,
+      );
 
-    return response.data;
+      if (response.status !== StatusCode.OK) {
+        return await Promise.reject(response.data);
+      }
+      return response.data;
+    } catch (error) {
+      return await Promise.reject(error);
+    }
   };
 
   getAllQuestionsByOwner = async (ownerID: string) => {
-    const response = await this.axiosRequest(
-      Method.GET,
-      '/question/all/filterBy/owner',
-      ownerID,
-    );
-    return response.data;
+    try {
+      const response = await this.axiosRequest(
+        Method.GET,
+        '/question/all/filterBy/owner',
+        ownerID,
+      );
+      if (response.status !== StatusCode.OK) {
+        return await Promise.reject(response.data);
+      }
+      return response.data;
+    } catch (error) {
+      return await Promise.reject(error);
+    }
   };
 
   getAllTags = async () => {
     try {
-      const response = await this.axiosRequest(Method.GET, '/tags/all');
+      const response = await this.axiosRequest(Method.GET, '/tag/all');
       if (response.status !== StatusCode.OK) {
         return await Promise.reject(response.data);
       }
@@ -77,15 +107,20 @@ class MainService extends Api {
       if (response.status !== StatusCode.OK) {
         return await Promise.reject(response.data);
       }
+      if (response.status !== StatusCode.OK) {
+        return await Promise.reject(response.data);
+      }
       return response.data;
     } catch (error) {
       return await Promise.reject(error);
     }
   };
 
-  findUser = async (user: User) => {
+  getMe = async (token: string) => {
     try {
-      const response = await this.axiosRequest(Method.GET, '/users/me', user);
+      const response = await this.axiosRequest(Method.GET, '/users/me', null, {
+        Authorization: `Bearer ${token}`,
+      });
       if (response.status !== StatusCode.OK) {
         return await Promise.reject(response.data);
       }
@@ -112,11 +147,22 @@ class MainService extends Api {
   };
 
   login = async (credentials: string) => {
-    const response = await this.axiosRequest(Method.POST, '/auth/login', null, {
-      Authorization: credentials,
-      Accept: '/',
-    });
-    return response.data;
+    try {
+      const response = await this.axiosRequest(
+        Method.POST,
+        '/auth/login',
+        null,
+        {
+          Authorization: credentials,
+        },
+      );
+      if (response.status !== StatusCode.CREATED) {
+        return await Promise.reject(response.data);
+      }
+      return response.data;
+    } catch (error) {
+      return await Promise.reject(error);
+    }
   };
 }
 

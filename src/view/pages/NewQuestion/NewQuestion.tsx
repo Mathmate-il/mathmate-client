@@ -2,7 +2,10 @@ import { useState, SyntheticEvent } from 'react';
 import TagsInput from 'react-tagsinput';
 import 'react-tagsinput/react-tagsinput.css';
 import { useCreateQuestionMutation } from '../../../controller/entities/question/question.action';
+import { useGetAllTagsQuery } from '../../../controller/entities/tag/tag.action';
+import useStore from '../../../controller/store';
 import Question from '../../../model/entities/Question';
+import Tag from '../../../model/entities/Tag';
 import Footer from '../../components/Footer';
 import './NewQuestion.scss';
 
@@ -14,8 +17,8 @@ const initQuestion = {
   tags: [],
   rating: 0,
   owner: {
-    id: crypto.randomUUID().toString(),
-    createdAt: new Date().toString(),
+    id: '',
+    createdAt: '',
     email: '',
     name: '',
     image: '',
@@ -25,13 +28,24 @@ const initQuestion = {
 export default function NewQuestion() {
   const [tags, setTags] = useState([]);
   const createQuestionMutation = useCreateQuestionMutation();
+  const currentUser = useStore((state) => state.currentUser);
+
+  const allTagsQuery = useGetAllTagsQuery();
+
+  const allTags = useStore((state) => state.allTags);
+  console.log(allTags);
 
   // todo: shold remove all this objects initializations
   const [question, setQuestion] = useState<Question>(initQuestion);
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    createQuestionMutation.mutate(question);
+
+    if (currentUser) {
+      const updatedQuestion: Question = { ...question, owner: currentUser };
+
+      createQuestionMutation.mutate(updatedQuestion);
+    }
   };
 
   const handleInputChanged = (e: any) => {

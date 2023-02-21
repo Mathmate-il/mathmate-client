@@ -38,9 +38,6 @@ export function useGetAllQuestionsByOwnerQuery(ownerID: string) {
     onSuccess: (data) => {
       store.setQuestions(data);
     },
-    onError: (error) => {
-      console.error(error);
-    },
   });
 }
 
@@ -49,16 +46,12 @@ export function useCreateQuestionMutation() {
   const navigate = useNavigate();
 
   return useMutation(
-    (newQuestion: Question) =>
-      mainService.createQuestion(store.token ?? '', newQuestion),
+    (question: Question) => mainService.createQuestion(question),
     {
       onSuccess: (data) => {
         store.addQuestion(data);
         store.setSelectedQuestion(data);
         navigate('/searchResult');
-      },
-      onError: (error) => {
-        console.error(error);
       },
     },
   );

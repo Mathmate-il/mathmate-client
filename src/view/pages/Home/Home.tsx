@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import useStore from '../../../controller/store';
 import Footer from '../../components/Footer';
 import GoogleAuth from '../../components/GoogleAuth';
 import './Home.scss';
@@ -6,11 +7,18 @@ import './Home.scss';
 export default function Home() {
   const navigate = useNavigate();
 
+  const isLoggedIn = useStore((state) => state.isLoggedIn);
+
   return (
     <div className="home">
       <header className="header">
         <span>MathMate</span>
-        <GoogleAuth />
+        {!isLoggedIn && <GoogleAuth />}
+        {isLoggedIn && (
+          <button type="button" onClick={() => navigate('/profile')}>
+            profile
+          </button>
+        )}
       </header>
       <div className="contentBody">
         <article>
