@@ -1,3 +1,4 @@
+import { Axios, AxiosHeaders } from 'axios';
 import env from '../../config/env';
 import Question from '../../model/entities/Question';
 import Tag from '../../model/entities/Tag';
@@ -108,6 +109,14 @@ class MainService extends Api {
     } catch (error) {
       return await Promise.reject(error);
     }
+  };
+
+  login = async (credentials: string) => {
+    const response = await this.axiosRequest(Method.POST, '/auth/login', null, {
+      Authorization: credentials,
+      Accept: '/',
+    });
+    return response.data;
   };
 }
 

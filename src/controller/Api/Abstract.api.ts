@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig, HeadersDefaults } from 'axios';
 import { Method } from './types';
 
 abstract class Api {
@@ -7,12 +7,19 @@ abstract class Api {
     protected readonly headers: unknown,
   ) {}
 
-  protected async axiosRequest(method: Method, url: string, data?: unknown) {
+  protected async axiosRequest(
+    method: Method,
+    url: string,
+    data?: unknown,
+    headers?: any,
+  ) {
+    const fullUrl = `${this.baseUrl}${url}`;
+
     return axios({
       method,
-      url: `${this.baseUrl}${url}`,
-      data,
-    });
+      url: fullUrl,
+      headers,
+    } as AxiosRequestConfig);
   }
 }
 
