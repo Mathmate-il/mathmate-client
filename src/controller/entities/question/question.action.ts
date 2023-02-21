@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import Question from '../../../model/entities/Question';
 import Tag from '../../../model/entities/Tag';
 import mainService from '../../Api/mainService';
+import { QueryKeys } from '../../Api/types';
 import useStore from '../../store';
 
 export function useGetAllQuestionsQuery() {
   const store = useStore((state) => state);
 
   return useQuery({
-    queryKey: ['questions'],
+    queryKey: [QueryKeys.QUESTION],
     queryFn: mainService.getAllQuestions,
     onSuccess: (data) => {
       store.setQuestions(data);
@@ -21,7 +22,7 @@ export function useGetAllQuestionsByTagsQuery(tags: Tag[]) {
   const store = useStore((state) => state);
 
   return useQuery({
-    queryKey: ['questions', tags],
+    queryKey: [QueryKeys.QUESTION, tags],
     queryFn: () => mainService.getAllQuestionsByTags(tags),
     onSuccess: (data) => {
       store.setQuestions(data);
@@ -33,7 +34,7 @@ export function useGetAllQuestionsByOwnerQuery(ownerID: string) {
   const store = useStore((state) => state);
 
   return useQuery({
-    queryKey: ['questions', ownerID],
+    queryKey: [QueryKeys.QUESTION, ownerID],
     queryFn: () => mainService.getAllQuestionsByOwner(ownerID),
     onSuccess: (data) => {
       store.setQuestions(data);

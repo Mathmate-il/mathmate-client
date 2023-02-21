@@ -9,6 +9,13 @@ export enum Method {
   OPTIONS = 'options',
 }
 
+export enum QueryKeys {
+  QUESTION = 'question',
+  TAG = 'tag',
+  USER = 'user',
+  ANSWER = 'answer',
+}
+
 export enum StatusCode {
   /**
    * The server has received the request headers and the client should proceed to send the request body

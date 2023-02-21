@@ -30,19 +30,26 @@ export default function NewQuestion() {
   const createQuestionMutation = useCreateQuestionMutation();
   const currentUser = useStore((state) => state.currentUser);
 
-  const allTagsQuery = useGetAllTagsQuery();
+  useGetAllTagsQuery();
 
   const allTags = useStore((state) => state.allTags);
-  console.log(allTags);
 
-  // todo: shold remove all this objects initializations
   const [question, setQuestion] = useState<Question>(initQuestion);
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // todo: remove this tag mocking
+    const mockTags: Tag[] = [
+      { id: '14c66d82-a0cf-4203-94f5-b34cf312607d', tagName: 'Geometry' },
+    ];
+
     if (currentUser) {
-      const updatedQuestion: Question = { ...question, owner: currentUser };
+      const updatedQuestion: Question = {
+        ...question,
+        owner: currentUser,
+        tags: mockTags,
+      };
 
       createQuestionMutation.mutate(updatedQuestion);
     }
@@ -81,6 +88,14 @@ export default function NewQuestion() {
           />
           <label htmlFor="tagsInput">Tags:</label>
           <TagsInput
+            validationRegex={
+              new RegExp(
+                `\\b${allTags.map((t) => t.tagName).join('\\b|\\b')}\\b`,
+              )
+            }
+            onValidationReject={(data) => {
+              alert(`tag ${data} is not supported`);
+            }}
             value={tags}
             onChange={handleTagsChanged}
             onlyUnique
