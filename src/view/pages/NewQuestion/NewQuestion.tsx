@@ -23,7 +23,7 @@ const initQuestion = {
 };
 
 export default function NewQuestion() {
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(['Math']);
   const createQuestionMutation = useCreateQuestionMutation();
 
   // todo: shold remove all this objects initializations
@@ -46,13 +46,13 @@ export default function NewQuestion() {
   };
 
   return (
-    <div className="home">
+    <div style={{ justifyContent: 'center' }} className="home">
       <header className="header">
         <a href="/">
           <h1 className="heading-1">MathMate</h1>
         </a>
       </header>
-      <div className="contentBody newQ">
+      <div style={{ height: 'fit-content' }} className="contentBody newQ">
         <form className="form" onSubmit={handleSubmit}>
           <h1 className="heading-1" style={{ fontSize: '46px' }}>
             New Question
